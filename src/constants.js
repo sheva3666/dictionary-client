@@ -3,6 +3,7 @@ export const ROUTES = {
   login: "/login",
   user: "/user",
   register: "/register",
+  dictionary: "/dictionary",
   words: "/words",
   exercise: "/exercise",
 };
