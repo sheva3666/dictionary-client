@@ -26,4 +26,17 @@ export default createUseStyles((theme) => ({
       background: "#0752AA",
     },
   },
+
+  longButton: {
+    color: "#fff",
+    padding: "10px 145px",
+    borderRadius: 20,
+    border: "none",
+    background: "#00316B",
+    cursor: "pointer",
+    fontSize: 16,
+    "&:hover": {
+      background: "#0752AA",
+    },
+  },
 }));

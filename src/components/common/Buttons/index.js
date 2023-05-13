@@ -17,3 +17,12 @@ export const Button = ({ name, onClick }) => {
     </button>
   );
 };
+
+export const LongButton = ({ name, onClick }) => {
+  const classes = useStyles();
+  return (
+    <button onClick={onClick} className={classes.longButton}>
+      {name}
+    </button>
+  );
+};
