@@ -1,4 +1,5 @@
 import useStyles from "./styles";
+import classNames from "classnames";
 
 export const TransperentButton = ({ name, onClick }) => {
   const classes = useStyles();
@@ -18,10 +19,16 @@ export const Button = ({ name, onClick }) => {
   );
 };
 
-export const LongButton = ({ name, onClick }) => {
+export const LongButton = ({ name, onClick, disabled }) => {
   const classes = useStyles();
   return (
-    <button onClick={onClick} className={classes.longButton}>
+    <button
+      disabled={disabled}
+      onClick={onClick}
+      className={classNames(classes.longButton, {
+        [classes.disabled]: disabled,
+      })}
+    >
       {name}
     </button>
   );

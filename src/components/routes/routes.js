@@ -3,6 +3,8 @@ import LoginLayout from "../LoginLayout";
 import PrivateRoute from "./PrivateRoute";
 import ActionsPage from "../ActionsPage";
 import Home from "../Home";
+import Dictionary from "../Dictionary";
+import Exercises from "../Exercises";
 
 export const openRoutes = [
   { path: ROUTES.login, component: <LoginLayout /> },
@@ -12,5 +14,12 @@ export const openRoutes = [
 
 export const privateRoutes = [
   { path: ROUTES.user, component: <PrivateRoute component={ActionsPage} /> },
-  //   { route: ROUTES.words, component: <PrivateRoute /> },
+  {
+    path: ROUTES.dictionary,
+    component: <PrivateRoute component={Dictionary} />,
+  },
+  {
+    path: ROUTES.exercises,
+    component: <PrivateRoute component={Exercises} />,
+  },
 ];

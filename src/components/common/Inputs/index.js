@@ -1,4 +1,5 @@
 import useStyles from "./styles";
+import classNames from "classnames";
 
 export const EmailInput = ({ onChange, placeholder }) => {
   const classes = useStyles();
@@ -15,14 +16,21 @@ export const EmailInput = ({ onChange, placeholder }) => {
   );
 };
 
-export const PasswordInput = ({ onChange, placeholder, label }) => {
+export const PasswordInput = ({
+  onChange,
+  placeholder,
+  label,
+  confirmPassword,
+}) => {
   const classes = useStyles();
 
   return (
     <>
       <label htmlFor="">{label}:</label>
       <input
-        className={classes.passwordInput}
+        className={classNames(classes.passwordInput, {
+          [classes.error]: confirmPassword,
+        })}
         type="password"
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}

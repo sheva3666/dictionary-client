@@ -22,8 +22,4 @@ export default createUseStyles((theme) => ({
       background: "#0752AA",
     },
   },
-
-  error: {
-    border: "1px solid red",
-  },
 }));

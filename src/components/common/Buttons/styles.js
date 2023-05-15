@@ -39,4 +39,11 @@ export default createUseStyles((theme) => ({
       background: "#0752AA",
     },
   },
+
+  disabled: {
+    background: "grey",
+    "&:hover": {
+      background: "grey",
+    },
+  },
 }));

@@ -9,6 +9,7 @@ export default createUseStyles((theme) => ({
     background: "#fff",
     borderRadius: 30,
     border: "2px solid #00316B",
+    boxShadow: "-2rem 2rem 2rem rgba(white, 0.2)",
     cursor: "pointer",
     "&:hover": {
       background: "rgba(255, 255, 255, 0.794)",

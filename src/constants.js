@@ -3,7 +3,7 @@ export const ROUTES = {
   login: "/login",
   user: "/user",
   register: "/register",
-  dictionary: "/dictionary",
+  dictionary: "/user/dictionary",
   words: "/words",
-  exercise: "/exercise",
+  exercises: "/user/exercises",
 };

@@ -4,7 +4,7 @@ import Done from "../../media/icons/Done.png";
 import { ROUTES } from "../../constants";
 
 export const ACTIONS = [
-  { icon: Plus, text: "Add new word", path: ROUTES.words },
+  { icon: Plus, text: "Add new word" },
   { icon: Dictionary, text: "Your dictionary", path: ROUTES.dictionary },
-  { icon: Done, text: "Knowledge check", path: ROUTES.check },
+  { icon: Done, text: "Knowledge check", path: ROUTES.exercises },
 ];
