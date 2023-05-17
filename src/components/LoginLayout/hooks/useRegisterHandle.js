@@ -1,17 +1,9 @@
 import { useState } from "react";
 import { useMutation, gql } from "@apollo/client";
-import { useNavigate } from "react-router-dom";
-import { ROUTES } from "../../../constants";
-// import CREATE_USER from "../../../graphql/mutations/CreateUser.graphql";
+
 const CREATE_USER = gql`
   mutation CreateUser($user: UserInput!) {
-    createUser(user: $user) {
-      id
-      email
-      password
-      languageForLearn
-      language
-    }
+    createUser(user: $user)
   }
 `;
 
@@ -31,21 +23,28 @@ const useRegisterHandle = () => {
     !registerUser.email ||
     !registerUser.password ||
     !registerUser.language ||
-    !registerUser.languageForLearn;
+    !registerUser.languageForLearn ||
+    registerUser.language === registerUser.languageForLearn;
 
   const [createUser, { data, loading, error }] = useMutation(CREATE_USER);
 
-  const navigate = useNavigate();
-
   const onRegister = async (e) => {
     e.preventDefault();
-    await createUser({
-      variables: { user: registerUser },
-    });
-    !error && navigate(ROUTES.login);
-  };
+    try {
+      await createUser({
+        variables: { user: registerUser },
+      });
+    } catch (error) {
+      console.log(error);
+    }
 
-  console.log(registerUser);
+    setRegisterUser({
+      email: "",
+      password: "",
+      language: "",
+      languageForLearn: "",
+    });
+  };
 
   const handleCheckPasswordInputChange = (value) => {
     setCheckPassword(value);
@@ -66,8 +65,10 @@ const useRegisterHandle = () => {
   const handleLanguageForLearnSelectChange = (value) => {
     setRegisterUser({ ...registerUser, languageForLearn: value });
   };
+
   return {
-    error,
+    errorMessage: error?.message,
+    successMessage: data?.createUser,
     loading,
     checkPassword,
     registerUser,

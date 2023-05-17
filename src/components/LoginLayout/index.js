@@ -7,7 +7,6 @@ import useStyles from "./styles";
 
 const LoginLayout = () => {
   const location = useLocation();
-  console.log(location);
   const classes = useStyles();
   return (
     <div className={classes.container}>

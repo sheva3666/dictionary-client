@@ -9,4 +9,14 @@ export default createUseStyles((theme) => ({
     flexDirection: "column",
     gap: 20,
   },
+  success: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: 70,
+  },
+  message: {
+    textAlign: "center",
+    fontWeight: "bold",
+  },
 }));
