@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Modal from "../common/Modal";
 import Box from "./components/Box";
+import WordsModal from "./components/WordsModal";
 import { ACTIONS } from "./constants";
 import useStyles from "./styles";
 
@@ -26,7 +26,12 @@ const ActionsPage = () => {
           classes={classes}
         />
       ))}
-      {isModalOpen && <Modal title="Please add new word to dictionary"></Modal>}
+      {isModalOpen && (
+        <WordsModal
+          setIsModalOpen={setIsModalOpen}
+          title="Please add new word to dictionary"
+        />
+      )}
     </div>
   );
 };

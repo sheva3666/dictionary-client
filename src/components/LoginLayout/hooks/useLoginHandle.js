@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useMutation, gql } from "@apollo/client";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../../constants";
+import useLocalStorage from "../../../hooks/useLocalStorage";
 
 const LOGIN_USER = gql`
   mutation CreateUser($email: String!, $password: String!) {
@@ -14,21 +15,15 @@ const LOGIN_USER = gql`
   }
 `;
 
-const whenLoged = (navigate, data, loading) => {
-  if (!loading) {
-    data && localStorage.setItem("user", JSON.stringify(data));
-    data && navigate(ROUTES.user);
-  }
-};
-
 const useLoginHandle = () => {
+  const { setItem } = useLocalStorage();
   const navigate = useNavigate();
   const [user, setLoginUser] = useState({
     email: "",
     password: "",
   });
 
-  const [loginUser, { data, loading, error }] = useMutation(LOGIN_USER);
+  const [loginUser, { loading, error }] = useMutation(LOGIN_USER);
 
   const handleEmailInputChange = (value) => {
     setLoginUser({ ...user, email: value });
@@ -46,12 +41,14 @@ const useLoginHandle = () => {
           email: user.email,
           password: user.password,
         },
-      });
+      }).then((res) =>
+        localStorage.setItem("user", JSON.stringify(res?.data.loginUser))
+      );
     } catch (error) {
       console.log(error);
     }
     setLoginUser({ email: "", password: "" });
-    whenLoged(navigate, data?.loginUser, loading);
+    navigate(ROUTES.user);
   };
 
   return {

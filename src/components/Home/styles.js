@@ -4,6 +4,7 @@ export default createUseStyles((theme) => ({
   title: {
     color: "#fff",
     fontSize: 64,
+    textAlign: "center",
   },
   buttonsContainer: {
     display: "flex",
@@ -15,6 +16,6 @@ export default createUseStyles((theme) => ({
     alignItems: "center",
     margin: "0 auto",
     marginTop: 200,
-    maxWidth: 400,
+    maxWidth: 800,
   },
 }));

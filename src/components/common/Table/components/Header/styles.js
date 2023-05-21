@@ -10,10 +10,11 @@ export default createUseStyles((theme) => ({
     gap: 90,
   },
   container: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    paddingTop: 100,
+    padding: "70px 100px 200px 60px",
+    background: "#fff",
+    margin: "0 auto",
+    marginTop: 100,
+    maxWidth: 400,
+    borderRadius: 20,
   },
 }));

@@ -9,6 +9,13 @@ export default createUseStyles((theme) => ({
     padding: "5px 10px",
     borderRadius: 5,
   },
+  inputContainer: {
+    display: "flex",
+    gap: 5,
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+  },
 
   button: {
     color: "#fff",
@@ -25,5 +32,9 @@ export default createUseStyles((theme) => ({
 
   error: {
     border: "1px solid red",
+  },
+
+  checkBox: {
+    color: "#0075FF",
   },
 }));

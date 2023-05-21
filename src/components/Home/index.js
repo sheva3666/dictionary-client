@@ -13,7 +13,7 @@ const Home = () => {
       <h2 className={classes.title}>Welcome to your dictionary!</h2>
       <div className={classes.buttonsContainer}>
         <TransperentButton
-          onClick={() => navigate(ROUTES.login)}
+          onClick={() => navigate(ROUTES.user)}
           name="Sign in"
         />
         <Button onClick={() => navigate(ROUTES.register)} name="Register" />
