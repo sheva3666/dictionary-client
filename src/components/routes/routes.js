@@ -5,6 +5,7 @@ import ActionsPage from "../ActionsPage";
 import Home from "../Home";
 import Dictionary from "../Dictionary";
 import Exercises from "../Exercises";
+import Settings from "../Settings";
 
 export const openRoutes = [
   { path: ROUTES.login, component: <LoginLayout /> },
@@ -21,5 +22,9 @@ export const privateRoutes = [
   {
     path: ROUTES.exercises,
     component: <PrivateRoute component={Exercises} />,
+  },
+  {
+    path: ROUTES.settings,
+    component: <PrivateRoute component={Settings} />,
   },
 ];

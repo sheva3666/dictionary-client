@@ -6,4 +6,5 @@ export const ROUTES = {
   dictionary: "/user/dictionary",
   words: "/words",
   exercises: "/user/exercises",
+  settings: "/user/settings",
 };
