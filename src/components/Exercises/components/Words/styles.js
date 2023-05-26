@@ -1,10 +1,15 @@
 import { createUseStyles } from "react-jss";
 
 export default createUseStyles((theme) => ({
-  exercises: {
+  container: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    margin: "100px 20px",
+    color: "#fff",
+    marginLeft: 40,
+  },
+  word: {
+    fontWeight: "bold",
+    fontSize: 64,
   },
 }));

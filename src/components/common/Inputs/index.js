@@ -5,7 +5,9 @@ export const EmailInput = ({ onChange, placeholder, value }) => {
   const classes = useStyles();
   return (
     <>
-      <label htmlFor="">Email:</label>
+      <label className={classes.label} htmlFor="">
+        Email:
+      </label>
       <input
         value={value}
         className={classes.emailInput}
@@ -23,15 +25,19 @@ export const PasswordInput = ({
   label,
   confirmPassword,
   value,
+  settings,
 }) => {
   const classes = useStyles();
 
   return (
     <>
-      <label htmlFor="">{label}:</label>
+      <label className={classes.label} htmlFor="">
+        {label}:
+      </label>
       <input
         className={classNames(classes.passwordInput, {
           [classes.error]: confirmPassword,
+          [classes.settings]: settings,
         })}
         type="password"
         value={value}
@@ -47,7 +53,9 @@ export const Input = ({ onChange, placeholder, label, value }) => {
 
   return (
     <div className={classes.inputContainer}>
-      <label htmlFor="">{label}:</label>
+      <label className={classes.label} htmlFor="">
+        {label}:
+      </label>
       <input
         className={classes.passwordInput}
         value={value}

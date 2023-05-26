@@ -5,7 +5,7 @@ export default createUseStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding: "40px 40px",
+    padding: "80px 80px",
     background: "#fff",
     borderRadius: 30,
     border: "2px solid #00316B",
@@ -21,7 +21,7 @@ export default createUseStyles((theme) => ({
     marginTop: 20,
   },
   icon: {
-    width: "30%",
+    width: "50%",
     height: "100%",
   },
   container: {
@@ -29,6 +29,6 @@ export default createUseStyles((theme) => ({
     justifyContent: "space-between",
     margin: "auto",
     marginTop: 250,
-    maxWidth: 800,
+    maxWidth: 1000,
   },
 }));

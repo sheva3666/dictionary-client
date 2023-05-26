@@ -5,6 +5,10 @@ export default createUseStyles((theme) => ({
     padding: "5px 10px",
     borderRadius: 5,
   },
+  label: {
+    color: "#00316B",
+    fontWeight: "bold",
+  },
   passwordInput: {
     padding: "5px 10px",
     borderRadius: 5,
@@ -36,5 +40,10 @@ export default createUseStyles((theme) => ({
 
   checkBox: {
     color: "#0075FF",
+  },
+  settings: {
+    width: 280,
+    paddingTop: 10,
+    paddingBottom: 10,
   },
 }));

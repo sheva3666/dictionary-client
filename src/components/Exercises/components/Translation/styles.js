@@ -1,10 +1,12 @@
 import { createUseStyles } from "react-jss";
 
 export default createUseStyles((theme) => ({
-  exercises: {
+  container: {
     display: "flex",
+    flexDirection: "column",
+    gap: 60,
     justifyContent: "space-between",
     alignItems: "center",
-    margin: "100px 20px",
+    margin: "20px 20px",
   },
 }));

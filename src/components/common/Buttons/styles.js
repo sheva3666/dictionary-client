@@ -52,4 +52,22 @@ export default createUseStyles((theme) => ({
       background: "grey",
     },
   },
+  width: {
+    width: 300,
+  },
+  green: {
+    background: "green",
+  },
+  red: {
+    background: "red",
+  },
+
+  backButton: {
+    color: "#fff",
+    padding: "5px 20px",
+    background: "transparent",
+    border: "none",
+    cursor: "pointer",
+    fontSize: 16,
+  },
 }));

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { EmailInput, PasswordInput } from "../../common/Inputs";
 import { LongButton, Button } from "../../common/Buttons";
-import Select from "../../common/Select";
+import { Select } from "../../common/Selects";
 import { useNavigate } from "react-router-dom";
 import useStyles from "./styles";
 import useRegisterHandle from "../hooks/useRegisterHandle";

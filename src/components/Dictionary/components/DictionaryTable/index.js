@@ -3,6 +3,7 @@ import Table from "../../../common/Table";
 import { compact } from "lodash";
 import useLocalStorage from "../../../../hooks/useLocalStorage";
 import { capitalizeFirstLetter } from "../../../../utils/utils";
+import TableToolbar from "../TableToolbar";
 import { gql, useQuery } from "@apollo/client";
 import LoadingSpinner from "../../../common/LoadingSpinner";
 
@@ -52,6 +53,7 @@ const DictionaryTable = () => {
   if (loading) return <LoadingSpinner />;
   return (
     <div>
+      <TableToolbar tableLength={data?.words.length} />
       <Table tableHeader={tableHeader} tableData={data?.words} />
     </div>
   );
