@@ -1,4 +1,5 @@
 import React from "react";
+import Title from "../../common/Title";
 import { EmailInput, PasswordInput } from "../../common/Inputs";
 import { ErrorMessage } from "../../common/Messages";
 import { LongButton } from "../../common/Buttons";
@@ -19,7 +20,7 @@ const Login = () => {
   if (loading) return <LoadingSpinner />;
   return (
     <form className={classes.form}>
-      <h2 className={classes.title}>Welcome back!</h2>
+      <Title title="Welcome back!" />
       {errorMessage && <ErrorMessage message={errorMessage} />}
       <EmailInput
         value={user.email}
@@ -32,7 +33,7 @@ const Login = () => {
         onChange={handlePasswordInputChange}
         placeholder="Enter your password"
       />
-      <LongButton onClick={(e) => onLogin(e)} name="Login" />
+      <LongButton marginTop onClick={(e) => onLogin(e)} name="Login" />
     </form>
   );
 };

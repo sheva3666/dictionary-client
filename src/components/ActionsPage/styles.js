@@ -8,11 +8,10 @@ export default createUseStyles((theme) => ({
     padding: "80px 80px",
     background: "#fff",
     borderRadius: 30,
-    border: "2px solid #00316B",
-    boxShadow: "-2rem 2rem 2rem rgba(white, 0.2)",
     cursor: "pointer",
     "&:hover": {
       background: "rgba(255, 255, 255, 0.794)",
+      boxShadow: "#fff 0px 10px 36px 0px, #fff 0px 0px 0px 1px",
     },
   },
   text: {

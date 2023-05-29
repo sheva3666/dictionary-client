@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Header from "../common/Header";
-import useStyles from "./styles";
 import { SettingsSelect } from "../common/Selects";
 import { LANGUAGES } from "../LoginLayout/constants";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import { PasswordInput } from "../common/Inputs";
 import { LongButton } from "../common/Buttons";
+import Title from "../common/Title";
+import useStyles from "./styles";
 
 const Settings = () => {
   const { getItem } = useLocalStorage();
@@ -33,7 +34,7 @@ const Settings = () => {
     <>
       <Header />
       <div className={classes.container}>
-        <h2 className={classes.title}>Settings</h2>
+        <Title title="Settings" />
         <SettingsSelect
           value={updatedUser.language}
           name="Chose your language"

@@ -2,16 +2,21 @@ import { createUseStyles } from "react-jss";
 
 export default createUseStyles((theme) => ({
   emailInput: {
-    padding: "5px 10px",
+    padding: "7px 10px",
     borderRadius: 5,
+    fontWeight: 400,
+    fontSize: 20,
   },
   label: {
     color: "#00316B",
     fontWeight: "bold",
+    fontSize: 24,
   },
   passwordInput: {
-    padding: "5px 10px",
+    padding: "7px 10px",
     borderRadius: 5,
+    fontWeight: 400,
+    fontSize: 20,
   },
   inputContainer: {
     display: "flex",
@@ -42,7 +47,7 @@ export default createUseStyles((theme) => ({
     color: "#0075FF",
   },
   settings: {
-    width: 280,
+    width: 300,
     paddingTop: 10,
     paddingBottom: 10,
   },

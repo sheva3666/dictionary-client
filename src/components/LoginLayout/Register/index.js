@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import Title from "../../common/Title";
 import { EmailInput, PasswordInput } from "../../common/Inputs";
 import { LongButton, Button } from "../../common/Buttons";
 import { Select } from "../../common/Selects";
@@ -40,7 +41,7 @@ const Register = () => {
         </div>
       ) : (
         <form className={classes.form}>
-          <h2 className={classes.title}>Create new account!</h2>
+          <Title title="Create new account!" />
           {errorMessage && <ErrorMessage message={errorMessage} />}
           <EmailInput
             value={registerUser.email}

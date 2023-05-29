@@ -6,6 +6,8 @@ export default createUseStyles((theme) => ({
     borderRadius: 5,
     border: "1px solid",
     cursor: "pointer",
+    fontWeight: 400,
+    fontSize: 20,
   },
 
   settingsSelect: {
@@ -24,5 +26,6 @@ export default createUseStyles((theme) => ({
   label: {
     color: "#00316B",
     fontWeight: "bold",
+    fontSize: 24,
   },
 }));

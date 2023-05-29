@@ -10,10 +10,10 @@ export default createUseStyles((theme) => ({
     gap: 90,
   },
   container: {
-    padding: "70px 100px 200px 60px",
+    padding: "50px 70px 50px 60px",
     background: "#fff",
     margin: "0 auto",
-    marginTop: 100,
+    marginTop: 80,
     maxWidth: 400,
     borderRadius: 20,
   },

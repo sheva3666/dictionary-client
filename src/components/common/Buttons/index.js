@@ -39,7 +39,7 @@ export const Button = ({
   );
 };
 
-export const LongButton = ({ name, onClick, disabled }) => {
+export const LongButton = ({ name, onClick, disabled, marginTop }) => {
   const classes = useStyles();
   return (
     <button
@@ -47,6 +47,7 @@ export const LongButton = ({ name, onClick, disabled }) => {
       onClick={onClick}
       className={classNames(classes.longButton, {
         [classes.disabled]: disabled,
+        [classes.marginTop]: marginTop,
       })}
     >
       {name}

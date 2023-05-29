@@ -4,7 +4,7 @@ export default createUseStyles((theme) => ({
   transperentButton: {
     color: "#0075FF",
     padding: "15px 62px",
-    borderRadius: 20,
+    borderRadius: 5,
     border: "3px solid #0075FF",
     background: "transparent",
     cursor: "pointer",
@@ -17,7 +17,7 @@ export default createUseStyles((theme) => ({
   button: {
     color: "#fff",
     padding: "15px 62px",
-    borderRadius: 20,
+    borderRadius: 5,
     border: "none",
     background: "#0075FF",
     cursor: "pointer",
@@ -36,7 +36,7 @@ export default createUseStyles((theme) => ({
   longButton: {
     color: "#fff",
     padding: "10px 145px",
-    borderRadius: 20,
+    borderRadius: 5,
     border: "none",
     background: "#00316B",
     cursor: "pointer",
@@ -80,5 +80,9 @@ export default createUseStyles((theme) => ({
     border: "none",
     cursor: "pointer",
     fontSize: 16,
+  },
+
+  marginTop: {
+    marginTop: 50,
   },
 }));
