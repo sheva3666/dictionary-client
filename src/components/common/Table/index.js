@@ -10,7 +10,7 @@ const Table = ({ tableHeader, tableData }) => {
     <table className={classes.table}>
       <Header classes={classes} tableHeader={tableHeader} />
       {tableData.map((rowData) => (
-        <Row classes={classes} rowData={rowData} />
+        <Row key={rowData.word} classes={classes} rowData={rowData} />
       ))}
     </table>
   );
