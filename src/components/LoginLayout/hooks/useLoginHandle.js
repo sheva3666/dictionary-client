@@ -47,7 +47,7 @@ const useLoginHandle = () => {
       console.log(error);
     }
     setLoginUser({ email: "", password: "" });
-    getItem("user").userEmail === true && navigate(ROUTES.user);
+    getItem("user").userAuth === true && navigate(ROUTES.user);
   };
 
   return {
