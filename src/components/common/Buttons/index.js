@@ -71,7 +71,7 @@ export const IconButton = ({ onClick, disabled, icon }) => {
   const classes = useStyles();
   return (
     <button
-      className={classes.backButton}
+      className={classes.iconButton}
       disabled={disabled}
       onClick={onClick}
     >

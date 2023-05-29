@@ -1,7 +1,8 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import LoadingSpinner from "../common/LoadingSpinner";
 import { gql, useQuery } from "@apollo/client";
+
+import LoadingSpinner from "../common/LoadingSpinner";
 import { ROUTES } from "../../constants";
 import useLocalStorage from "../../hooks/useLocalStorage";
 
@@ -26,8 +27,9 @@ const PrivateRoute = ({ component: Component }) => {
   });
 
   if (loading) return <LoadingSpinner />;
+  data?.auth && localStorage.setItem("user", JSON.stringify(data?.auth));
 
-  return data?.auth ? <Component /> : <Navigate to={ROUTES.login} />;
+  return data?.auth?.userAuth ? <Component /> : <Navigate to={ROUTES.login} />;
 };
 
 export default PrivateRoute;

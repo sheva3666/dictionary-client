@@ -70,4 +70,15 @@ export default createUseStyles((theme) => ({
     cursor: "pointer",
     fontSize: 16,
   },
+
+  iconButton: {
+    display: "flex",
+    alignItems: "center",
+    color: "#fff",
+    padding: "5px 20px",
+    background: "transparent",
+    border: "none",
+    cursor: "pointer",
+    fontSize: 16,
+  },
 }));

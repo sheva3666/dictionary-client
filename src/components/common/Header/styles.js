@@ -11,4 +11,10 @@ export default createUseStyles((theme) => ({
     justifyContent: "space-between",
     alignItems: "center",
   },
+
+  buttonContainer: {
+    display: "flex",
+    gap: 20,
+    alignItems: "center",
+  },
 }));

@@ -16,7 +16,11 @@ const useLocalStorage = () => {
   const setItem = (item, key) => {
     return localStorage.setItem(key, JSON.stringify(item));
   };
-  return { getItem, setItem };
+
+  const removeItem = (key) => {
+    return localStorage.removeItem(key);
+  };
+  return { getItem, setItem, removeItem };
 };
 
 export default useLocalStorage;
