@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useMutation, gql } from "@apollo/client";
 import { useNavigate } from "react-router-dom";
+
 import { ROUTES } from "../../../constants";
 import useLocalStorage from "../../../hooks/useLocalStorage";
 
@@ -16,7 +17,7 @@ const LOGIN_USER = gql`
 `;
 
 const useLoginHandle = () => {
-  const { setItem } = useLocalStorage();
+  const { setItem, getItem } = useLocalStorage();
   const navigate = useNavigate();
   const [user, setLoginUser] = useState({
     email: "",
@@ -41,14 +42,12 @@ const useLoginHandle = () => {
           email: user.email,
           password: user.password,
         },
-      }).then((res) =>
-        localStorage.setItem("user", JSON.stringify(res?.data.loginUser))
-      );
+      }).then((res) => setItem(res?.data.loginUser, "user"));
     } catch (error) {
       console.log(error);
     }
     setLoginUser({ email: "", password: "" });
-    navigate(ROUTES.user);
+    getItem("user").userEmail === true && navigate(ROUTES.user);
   };
 
   return {
