@@ -22,6 +22,7 @@ export default createUseStyles((theme) => ({
     padding: "20px",
     border: "1px solid #888",
     width: "40%",
+    height: "50%",
     background: "#fff",
     borderRadius: 30,
     boxShadow: "#fff 0px 10px 36px 0px, #fff 0px 0px 0px 1px",

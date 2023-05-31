@@ -1,13 +1,19 @@
 import useStyles from "./styles";
 import classNames from "classnames";
 
-export const TransperentButton = ({ name, onClick, betterSize }) => {
+export const TransperentButton = ({
+  name,
+  onClick,
+  betterSize,
+  exerciseWidth,
+}) => {
   const classes = useStyles();
   return (
     <button
       onClick={onClick}
       className={classNames(classes.transperentButton, {
         [classes.betterSize]: betterSize,
+        [classes.exerciseWidth]: exerciseWidth,
       })}
     >
       {name}

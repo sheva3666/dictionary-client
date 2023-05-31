@@ -85,4 +85,9 @@ export default createUseStyles((theme) => ({
   marginTop: {
     marginTop: 50,
   },
+
+  exerciseWidth: {
+    width: 500,
+    margin: "0 auto",
+  },
 }));

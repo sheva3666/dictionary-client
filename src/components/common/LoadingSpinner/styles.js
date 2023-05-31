@@ -8,6 +8,8 @@ export default createUseStyles((theme) => ({
     width: 80,
     height: 80,
     animation: "spin 1s linear infinite",
+    margin: "0 auto",
+    marginTop: 300,
   },
 
   "@keyframes spin": {

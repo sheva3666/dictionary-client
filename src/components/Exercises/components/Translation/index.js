@@ -5,7 +5,7 @@ import useStyles from "./styles";
 
 const Translation = ({ checkWord, words, onCheck, correct }) => {
   const classes = useStyles();
-  console.log(checkWord);
+
   return (
     <div className={classes.container}>
       {words.map(({ word }) => {

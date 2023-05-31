@@ -6,7 +6,7 @@ import LoadingSpinner from "../common/LoadingSpinner";
 import { ROUTES } from "../../constants";
 import useLocalStorage from "../../hooks/useLocalStorage";
 
-const GET_AUTH = gql`
+export const GET_AUTH = gql`
   query Auth($userEmail: String!) {
     auth(userEmail: $userEmail) {
       userEmail
