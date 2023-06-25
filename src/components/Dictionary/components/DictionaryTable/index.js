@@ -6,6 +6,7 @@ import { capitalizeFirstLetter } from "../../../../utils/utils";
 import TableToolbar from "../TableToolbar";
 import { gql, useQuery } from "@apollo/client";
 import LoadingSpinner from "../../../common/LoadingSpinner";
+import { TransperentButton } from "../../../common/Buttons";
 
 const GET_WORDS = gql`
   query Words(
@@ -13,19 +14,25 @@ const GET_WORDS = gql`
     $language: String!
     $translateLanguage: String!
     $searchString: String!
+    $page: Int
   ) {
     words(
       user: $user
       language: $language
       translateLanguage: $translateLanguage
+      page: $page
       searchString: $searchString
     ) {
-      id
-      user
-      word
-      translate
-      translateLanguage
-      language
+      numberOfPages
+      currentPage
+      words {
+        id
+        user
+        word
+        translate
+        translateLanguage
+        language
+      }
     }
   }
 `;
@@ -44,8 +51,9 @@ const createTableHeader = ({ language, languageForLearn }) =>
     },
   ]);
 
-const DictionaryTable = () => {
+const DictionaryTable = ({ classes }) => {
   const [searchQueryString, setSearchString] = useState("");
+  const [page, setPage] = useState(1);
 
   const { getItem } = useLocalStorage();
   const { languageForLearn, language, userEmail } = getItem("user");
@@ -57,6 +65,7 @@ const DictionaryTable = () => {
       user: userEmail,
       language: languageForLearn,
       translateLanguage: language,
+      page,
       searchString: searchQueryString || "null",
     },
   });
@@ -67,9 +76,24 @@ const DictionaryTable = () => {
       <TableToolbar
         searchValue={searchQueryString}
         onSearch={setSearchString}
-        tableLength={data?.words.length}
+        pages={data?.words.numberOfPages}
+        currentPage={data?.words.currentPage}
       />
-      <Table tableHeader={tableHeader} tableData={data?.words} />
+      <Table tableHeader={tableHeader} tableData={data?.words.words} />
+      <div className={classes.buttonContainer}>
+        <TransperentButton
+          name="Previouse page"
+          onClick={() => setPage(data?.words.currentPage - 1)}
+          marginAuto
+          disabled={data?.words.currentPage === 1}
+        />
+        <TransperentButton
+          name="Next page"
+          onClick={() => setPage(data?.words.currentPage + 1)}
+          marginAuto
+          disabled={data?.words.currentPage === data?.words.numberOfPages}
+        />
+      </div>
     </div>
   );
 };

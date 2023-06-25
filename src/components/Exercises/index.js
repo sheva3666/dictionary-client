@@ -5,7 +5,7 @@ import useStyles from "./styles";
 import useExerciseData from "./hooks/useExerciseData";
 import LoadingSpinner from "../common/LoadingSpinner";
 import Header from "../common/Header";
-import { Button, LongButton, TransperentButton } from "../common/Buttons";
+import { Button, TransperentButton } from "../common/Buttons";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../constants";
 import { ErrorMessage } from "../common/Messages";

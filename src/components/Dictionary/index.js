@@ -9,7 +9,7 @@ const Dictionary = () => {
     <>
       <Header />
       <div className={classes.container}>
-        <DictionaryTable />
+        <DictionaryTable classes={classes} />
       </div>
     </>
   );

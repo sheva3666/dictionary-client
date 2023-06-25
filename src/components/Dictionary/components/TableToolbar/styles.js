@@ -10,8 +10,14 @@ export default createUseStyles((theme) => ({
     borderRadius: "10px 10px 0px 0px ",
     border: "1px solid #000",
   },
+  pagesInfo: {
+    display: "flex",
+    alignItems: "center",
+    width: "100%",
+  },
   title: {
     fontSize: 16,
     margin: 0,
+    width: 130,
   },
 }));

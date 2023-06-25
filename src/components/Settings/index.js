@@ -47,6 +47,8 @@ const Settings = () => {
     ],
   });
 
+  const classes = useStyles();
+
   const handleLanguageSelectChange = (value) => {
     setUpdatedUser({ ...updatedUser, language: value });
   };
@@ -63,12 +65,12 @@ const Settings = () => {
     try {
       await updateUser({
         variables: { user: updatedUser },
-      });
+      }).then(setUpdatedUser({ ...updatedUser, password: "" }));
     } catch (error) {
       console.log(error);
     }
   };
-  const classes = useStyles();
+
   return (
     <>
       <Header />
@@ -92,6 +94,7 @@ const Settings = () => {
         />
 
         {error && <ErrorMessage message={error.message} />}
+
         <PasswordInput
           value={updatedUser.password}
           label="Password"

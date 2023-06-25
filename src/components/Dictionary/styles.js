@@ -16,4 +16,9 @@ export default createUseStyles((theme) => ({
     alignItems: "center",
     paddingTop: 100,
   },
+  buttonContainer: {
+    marginTop: 30,
+    display: "flex",
+    justifyContent: "space-between",
+  },
 }));

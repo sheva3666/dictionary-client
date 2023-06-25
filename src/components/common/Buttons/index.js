@@ -6,13 +6,16 @@ export const TransperentButton = ({
   onClick,
   betterSize,
   exerciseWidth,
+  disabled,
 }) => {
   const classes = useStyles();
   return (
     <button
+      disabled={disabled}
       onClick={onClick}
       className={classNames(classes.transperentButton, {
         [classes.betterSize]: betterSize,
+        [classes.disabled]: disabled,
         [classes.exerciseWidth]: exerciseWidth,
       })}
     >

@@ -4,7 +4,6 @@ import Modal from "../../../common/Modal";
 import { capitalizeFirstLetter } from "../../../../utils/utils";
 import useStyles from "./styles";
 import useSaveNewWord from "../../hooks/useSaveNewWord";
-import LoadingSpinner from "../../../common/LoadingSpinner";
 import { ErrorMessage } from "../../../common/Messages";
 
 const WordsModal = ({ setIsModalOpen }) => {
@@ -20,8 +19,6 @@ const WordsModal = ({ setIsModalOpen }) => {
       setAddAnother(true);
     }
   };
-
-  console.log(addAnother);
 
   const classes = useStyles();
 

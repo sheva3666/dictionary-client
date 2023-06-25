@@ -54,7 +54,7 @@ export const Input = ({ onChange, placeholder, label, value }) => {
   return (
     <div className={classes.inputContainer}>
       <label className={classes.label} htmlFor="">
-        {label}:
+        {label}
       </label>
       <input
         className={classes.passwordInput}
