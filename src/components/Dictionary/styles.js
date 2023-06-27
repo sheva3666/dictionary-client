@@ -14,11 +14,21 @@ export default createUseStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    paddingTop: 100,
+    padding: [60, 0],
+    background: "#fff",
+    borderRadius: 30,
+    width: "60%",
+    height: "80%",
   },
   buttonContainer: {
     marginTop: 30,
     display: "flex",
     justifyContent: "space-between",
+  },
+  dictionary: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 70,
   },
 }));

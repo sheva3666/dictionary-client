@@ -17,6 +17,7 @@ export default createUseStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    justifyContent: "center",
     gap: 20,
     margin: "15% auto",
     padding: "20px",

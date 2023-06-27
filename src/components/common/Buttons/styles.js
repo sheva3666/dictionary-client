@@ -2,7 +2,7 @@ import { createUseStyles } from "react-jss";
 
 export default createUseStyles((theme) => ({
   transperentButton: {
-    color: "#0075FF",
+    color: "#fff",
     padding: "15px 62px",
     borderRadius: 5,
     border: "3px solid #0075FF",
@@ -19,7 +19,7 @@ export default createUseStyles((theme) => ({
     padding: "15px 62px",
     borderRadius: 5,
     border: "none",
-    background: "#0075FF",
+    background: "#0752AA",
     cursor: "pointer",
     fontSize: 32,
     "&:hover": {
@@ -28,9 +28,9 @@ export default createUseStyles((theme) => ({
   },
 
   betterSize: {
-    fontSize: 16,
+    fontSize: 20,
     padding: "5px 20px",
-    border: "3px solid #0075FF",
+    border: "3px solid #00316B",
   },
 
   longButton: {
@@ -44,6 +44,10 @@ export default createUseStyles((theme) => ({
     "&:hover": {
       background: "#0752AA",
     },
+  },
+
+  exerciseColor: {
+    color: "#00316B",
   },
 
   disabled: {

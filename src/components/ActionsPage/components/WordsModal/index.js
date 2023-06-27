@@ -29,10 +29,12 @@ const WordsModal = ({ setIsModalOpen }) => {
     onSaveWord,
     errorMessage,
     onClose,
+    savingDisabled,
   } = useSaveNewWord({ setIsModalOpen, addAnother });
 
   return (
     <Modal
+      disabled={savingDisabled}
       onCancel={onClose}
       onSubmit={onSaveWord}
       checkBoxValue={addAnother}

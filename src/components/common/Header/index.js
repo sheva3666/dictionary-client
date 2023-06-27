@@ -40,7 +40,7 @@ const Header = () => {
       },
     });
     removeItem("user");
-    navigate(ROUTES.login);
+    navigate(ROUTES.home);
   };
   return (
     <div className={classes.header}>

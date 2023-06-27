@@ -6,12 +6,12 @@ import Header from "../common/Header";
 const Dictionary = () => {
   const classes = useStyles();
   return (
-    <>
+    <div className={classes.dictionary}>
       <Header />
       <div className={classes.container}>
         <DictionaryTable classes={classes} />
       </div>
-    </>
+    </div>
   );
 };
 

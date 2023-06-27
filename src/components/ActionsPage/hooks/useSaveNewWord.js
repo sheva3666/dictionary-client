@@ -43,6 +43,8 @@ const useSaveNewWord = ({ setIsModalOpen, addAnother }) => {
     }
   };
 
+  const savingDisabled = !word.translate || !word.word;
+
   const onSaveWord = async () => {
     const newWord = {
       user: userEmail,
@@ -71,6 +73,7 @@ const useSaveNewWord = ({ setIsModalOpen, addAnother }) => {
     onSaveWord,
     handleLearningInputChange,
     handleTranslateInputChange,
+    savingDisabled,
   };
 };
 

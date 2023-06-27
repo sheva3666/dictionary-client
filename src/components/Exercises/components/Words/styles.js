@@ -6,10 +6,10 @@ export default createUseStyles((theme) => ({
     justifyContent: "space-between",
     alignItems: "center",
     color: "#fff",
-    marginLeft: 40,
   },
   word: {
     fontWeight: "bold",
     fontSize: 64,
+    color: "#00316B",
   },
 }));

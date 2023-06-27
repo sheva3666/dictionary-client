@@ -16,5 +16,6 @@ export default createUseStyles((theme) => ({
     marginTop: 100,
     maxWidth: 400,
     borderRadius: 20,
+    borderLeft: "1px solid #00316B",
   },
 }));

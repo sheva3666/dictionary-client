@@ -11,6 +11,7 @@ const Modal = ({
   onCancel,
   onSubmit,
   onCheckBoxClick,
+  disabled,
 }) => {
   const classes = useStyles();
   return (
@@ -24,8 +25,18 @@ const Modal = ({
             onChange={onCheckBoxClick}
             label="Add another"
           />
-          <Button onClick={onSubmit} betterSize name="Add" />
-          <TransperentButton onClick={onCancel} betterSize name="Cancel" />
+          <Button
+            disabled={disabled}
+            onClick={onSubmit}
+            betterSize
+            name="Add"
+          />
+          <TransperentButton
+            onClick={onCancel}
+            betterSize
+            exerciseColor
+            name="Cancel"
+          />
         </div>
       </div>
     </div>

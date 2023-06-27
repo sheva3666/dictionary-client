@@ -16,7 +16,11 @@ const Home = () => {
           onClick={() => navigate(ROUTES.user)}
           name="Sign in"
         />
-        <Button onClick={() => navigate(ROUTES.register)} name="Register" />
+        <Button
+          onClick={() => navigate(ROUTES.register)}
+          exerciseColor
+          name="Register"
+        />
       </div>
     </div>
   );

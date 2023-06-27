@@ -7,6 +7,9 @@ export const TransperentButton = ({
   betterSize,
   exerciseWidth,
   disabled,
+  exerciseColor,
+  correct,
+  incorrect,
 }) => {
   const classes = useStyles();
   return (
@@ -17,6 +20,9 @@ export const TransperentButton = ({
         [classes.betterSize]: betterSize,
         [classes.disabled]: disabled,
         [classes.exerciseWidth]: exerciseWidth,
+        [classes.exerciseColor]: exerciseColor,
+        [classes.red]: incorrect,
+        [classes.green]: correct,
       })}
     >
       {name}
@@ -28,6 +34,7 @@ export const Button = ({
   name,
   onClick,
   betterSize,
+  disabled,
   width,
   correct,
   incorrect,
@@ -35,12 +42,14 @@ export const Button = ({
   const classes = useStyles();
   return (
     <button
+      disabled={disabled}
       onClick={onClick}
       className={classNames(classes.button, {
         [classes.betterSize]: betterSize,
         [classes.width]: width,
         [classes.red]: incorrect,
         [classes.green]: correct,
+        [classes.disabled]: disabled,
       })}
     >
       {name}

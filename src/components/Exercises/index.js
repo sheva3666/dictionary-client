@@ -60,12 +60,13 @@ const Exercises = () => {
               onCheck={onCheck}
               words={translatedWords}
             />
+            <Button
+              betterSize
+              onClick={() => window.location.reload()}
+              exerciseWidth
+              name="Next word"
+            />
           </div>
-          <TransperentButton
-            onClick={() => window.location.reload()}
-            exerciseWidth
-            name="Next word"
-          />
         </div>
       )}
     </>

@@ -3,9 +3,14 @@ import { createUseStyles } from "react-jss";
 export default createUseStyles((theme) => ({
   exercises: {
     display: "flex",
-    justifyContent: "space-between",
+    flexDirection: "column",
+    gap: 70,
     alignItems: "center",
+    background: "#fff",
+    width: "60%",
     margin: "100px 20px",
+    paddingBottom: 40,
+    borderRadius: 30,
   },
   error: {
     display: "flex",
@@ -19,6 +24,7 @@ export default createUseStyles((theme) => ({
   container: {
     display: "flex",
     flexDirection: "column",
+    alignItems: "center",
   },
   loadingContainer: {
     display: "flex",
