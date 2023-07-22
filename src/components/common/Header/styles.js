@@ -17,4 +17,8 @@ export default createUseStyles((theme) => ({
     gap: 20,
     alignItems: "center",
   },
+  score: {
+    color: "green",
+    marginLeft: 100,
+  },
 }));

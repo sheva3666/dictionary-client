@@ -14,7 +14,7 @@ export default createUseStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    padding: [60, 0],
+    padding: [60, 60],
     background: "#fff",
     borderRadius: 30,
     width: "60%",

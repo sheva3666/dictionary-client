@@ -19,7 +19,7 @@ const LOGOUT = gql`
   }
 `;
 
-const Header = () => {
+const Header = ({ score }) => {
   const [updateAuth] = useMutation(LOGOUT);
 
   const { getItem, removeItem } = useLocalStorage();
@@ -45,6 +45,11 @@ const Header = () => {
   return (
     <div className={classes.header}>
       <BackButton name="< Back" onClick={() => navigate(ROUTES.user)} />
+      {score && (
+        <h2
+          className={classes.score}
+        >{`Hello ${score?.userEmail} your current score is ${score?.score}`}</h2>
+      )}
       <div className={classes.buttonContainer}>
         <IconButton onClick={() => navigate(ROUTES.settings)} icon={Settings} />
         {getItem("name") && (

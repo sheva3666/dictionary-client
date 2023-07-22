@@ -3,9 +3,10 @@ import Words from "./components/Words";
 import Translation from "./components/Translation";
 import useStyles from "./styles";
 import useExerciseData from "./hooks/useExerciseData";
+import useScoreData from "./hooks/useScoreData";
 import LoadingSpinner from "../common/LoadingSpinner";
 import Header from "../common/Header";
-import { Button, TransperentButton } from "../common/Buttons";
+import { Button } from "../common/Buttons";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../constants";
 import { ErrorMessage } from "../common/Messages";
@@ -18,6 +19,8 @@ export const answers = {
 const Exercises = () => {
   const [correct, setCorrect] = useState(null);
   const { word, translatedWords, loading, error } = useExerciseData();
+  const { score, updateScore, loading: loadingScore } = useScoreData();
+
   const classes = useStyles();
   const navigate = useNavigate();
 
@@ -29,6 +32,11 @@ const Exercises = () => {
     }
   };
 
+  const onClickNext = async () => {
+    const newScore = correct === answers.correct ? 1 : 0;
+    await updateScore(newScore).then(window.location.reload());
+  };
+
   useEffect(() => {
     if (error) {
       navigate(ROUTES.user);
@@ -37,7 +45,7 @@ const Exercises = () => {
 
   return (
     <>
-      <Header />
+      <Header score={score?.score} />
       {loading ? (
         <div className={classes.loadingContainer}>
           <LoadingSpinner />
@@ -61,8 +69,9 @@ const Exercises = () => {
               words={translatedWords}
             />
             <Button
+              disabled={!correct}
               betterSize
-              onClick={() => window.location.reload()}
+              onClick={onClickNext}
               exerciseWidth
               name="Next word"
             />
