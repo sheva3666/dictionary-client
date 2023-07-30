@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { gql, useQuery } from "@apollo/client";
 import useLocalStorage from "../../../hooks/useLocalStorage";
 
@@ -35,8 +34,9 @@ const GET_RANDOM_TRANSLATED_WORDS = gql`
 `;
 
 const useGetTranslatedWord = ({ user }) => {
-  const { data, loading, error } = useQuery(GET_RANDOM_TRANSLATED_WORDS, {
+  const { data, loading } = useQuery(GET_RANDOM_TRANSLATED_WORDS, {
     variables: { language: user.language },
+    fetchPolicy: "no-cache",
   });
   return {
     translatedWords: data?.translatedWords,
@@ -45,7 +45,7 @@ const useGetTranslatedWord = ({ user }) => {
 };
 
 const useGetWord = ({ user }) => {
-  const { data, loading, error } = useQuery(GET_RANDOM_WORD, {
+  const { data, loading } = useQuery(GET_RANDOM_WORD, {
     variables: {
       user: user.userEmail,
       language: user.languageForLearn,
@@ -64,6 +64,7 @@ const useExerciseData = () => {
     }
   );
   const { word, wordLoading } = useGetWord({ user });
+  console.log(translatedWordsLoading);
 
   return {
     translatedWords:

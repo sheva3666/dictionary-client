@@ -32,7 +32,9 @@ const useExerciseData = () => {
   const { getItem } = useLocalStorage();
   const user = getItem("user");
   const { score, scoreLoading } = useGetScore({ user });
-  const [updateScore] = useMutation(UPDATE_USER_SCORE);
+  const [updateScore] = useMutation(UPDATE_USER_SCORE, {
+    refetchQueries: ["Score", "TranslatedWords", "RandomWord"],
+  });
 
   return {
     score: scoreLoading ? undefined : score,

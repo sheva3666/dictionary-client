@@ -6,7 +6,7 @@ import useExerciseData from "./hooks/useExerciseData";
 import useScoreData from "./hooks/useScoreData";
 import LoadingSpinner from "../common/LoadingSpinner";
 import Header from "../common/Header";
-import { Button } from "../common/Buttons";
+import { PrimaryButton } from "../common/Buttons";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../constants";
 import { ErrorMessage } from "../common/Messages";
@@ -18,8 +18,8 @@ export const answers = {
 
 const Exercises = () => {
   const [correct, setCorrect] = useState(null);
-  const { word, translatedWords, loading, error } = useExerciseData();
-  const { score, updateScore, loading: loadingScore } = useScoreData();
+  const { word, translatedWords, error } = useExerciseData();
+  const { score, loading, updateScore } = useScoreData();
 
   const classes = useStyles();
   const navigate = useNavigate();
@@ -34,7 +34,8 @@ const Exercises = () => {
 
   const onClickNext = async () => {
     const newScore = correct === answers.correct ? 1 : 0;
-    await updateScore(newScore).then(window.location.reload());
+    await updateScore(newScore);
+    setCorrect(null);
   };
 
   useEffect(() => {
@@ -43,20 +44,26 @@ const Exercises = () => {
     }
   }, []);
 
+  if (loading) {
+    return (
+      <div className={classes.loadingContainer}>
+        <LoadingSpinner />
+      </div>
+    );
+  }
   return (
     <>
       <Header score={score?.score} />
-      {loading ? (
-        <div className={classes.loadingContainer}>
-          <LoadingSpinner />
-        </div>
-      ) : !word?.randomWord ? (
+      {!word?.randomWord ? (
         <div className={classes.error}>
           <ErrorMessage
             classes={classes}
             message="You have to add new words to your dictionary."
           />
-          <Button onClick={() => navigate(ROUTES.user)} name="To Actions" />
+          <PrimaryButton
+            onClick={() => navigate(ROUTES.user)}
+            name="To Actions"
+          />
         </div>
       ) : (
         <div className={classes.container}>
@@ -68,7 +75,7 @@ const Exercises = () => {
               onCheck={onCheck}
               words={translatedWords}
             />
-            <Button
+            <PrimaryButton
               disabled={!correct}
               betterSize
               onClick={onClickNext}

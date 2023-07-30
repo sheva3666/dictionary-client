@@ -6,7 +6,7 @@ import { capitalizeFirstLetter } from "../../../../utils/utils";
 import TableToolbar from "../TableToolbar";
 import { gql, useQuery } from "@apollo/client";
 import LoadingSpinner from "../../../common/LoadingSpinner";
-import { Button } from "../../../common/Buttons";
+import { PrimaryButton } from "../../../common/Buttons";
 
 const GET_WORDS = gql`
   query Words(
@@ -79,15 +79,15 @@ const DictionaryTable = ({ classes }) => {
         pages={data?.words.numberOfPages}
         currentPage={data?.words.currentPage}
       />
-      <Table tableHeader={tableHeader} tableData={data?.words.words} />
+      <Table tableHeader={tableHeader} tableData={data?.words?.words} />
       <div className={classes.buttonContainer}>
-        <Button
+        <PrimaryButton
           betterSize
           name="Previouse page"
           onClick={() => setPage(data?.words.currentPage - 1)}
           disabled={data?.words.currentPage === 1}
         />
-        <Button
+        <PrimaryButton
           betterSize
           name="Next page"
           onClick={() => setPage(data?.words.currentPage + 1)}

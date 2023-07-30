@@ -1,7 +1,7 @@
 import useStyles from "./styles";
 import classNames from "classnames";
 
-export const TransperentButton = ({
+export const SecondaryButton = ({
   name,
   onClick,
   betterSize,
@@ -16,7 +16,7 @@ export const TransperentButton = ({
     <button
       disabled={disabled}
       onClick={onClick}
-      className={classNames(classes.transperentButton, {
+      className={classNames(classes.secondaryButton, {
         [classes.betterSize]: betterSize,
         [classes.disabled]: disabled,
         [classes.exerciseWidth]: exerciseWidth,
@@ -30,7 +30,7 @@ export const TransperentButton = ({
   );
 };
 
-export const Button = ({
+export const PrimaryButton = ({
   name,
   onClick,
   betterSize,
@@ -44,7 +44,7 @@ export const Button = ({
     <button
       disabled={disabled}
       onClick={onClick}
-      className={classNames(classes.button, {
+      className={classNames(classes.primaryButton, {
         [classes.betterSize]: betterSize,
         [classes.width]: width,
         [classes.red]: incorrect,

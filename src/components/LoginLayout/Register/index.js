@@ -1,7 +1,7 @@
 import React from "react";
 import Title from "../../common/Title";
 import { EmailInput, PasswordInput } from "../../common/Inputs";
-import { LongButton, Button } from "../../common/Buttons";
+import { LongButton, PrimaryButton } from "../../common/Buttons";
 import { Select } from "../../common/Selects";
 import { useNavigate } from "react-router-dom";
 import useStyles from "./styles";
@@ -29,15 +29,16 @@ const Register = () => {
     onRegister,
   } = useRegisterHandle();
 
-  console.log(errorMessage);
-
   if (loading) return <h2>LOADING</h2>;
   return (
     <>
       {successMessage ? (
         <div className={classes.success}>
           <SuccessMessage classes={classes} message={successMessage} />
-          <Button onClick={() => navigate(ROUTES.login)} name="Sign in" />
+          <PrimaryButton
+            onClick={() => navigate(ROUTES.login)}
+            name="Sign in"
+          />
         </div>
       ) : (
         <form className={classes.form}>

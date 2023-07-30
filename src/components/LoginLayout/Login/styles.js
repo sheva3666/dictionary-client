@@ -6,4 +6,9 @@ export default createUseStyles((theme) => ({
     flexDirection: "column",
     gap: 20,
   },
+  container: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
 }));

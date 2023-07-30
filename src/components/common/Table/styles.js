@@ -5,6 +5,7 @@ export default createUseStyles((theme) => ({
     background: "#fff",
     border: "1px solid #000",
     borderRadius: "0px 0px 10px 10px ",
+    display: "block",
   },
   headerCell: {
     margin: 0,
@@ -16,8 +17,16 @@ export default createUseStyles((theme) => ({
     padding: "10px 15px",
     textAlign: "center",
   },
-
   header: {
     borderBottom: "1px solid #000",
+  },
+  error: {
+    display: "flex",
+    textAlign: "center",
+    flexDirection: "column",
+    gap: 20,
+    fontWeight: 400,
+    fontSize: 32,
+    margin: "0 auto",
   },
 }));

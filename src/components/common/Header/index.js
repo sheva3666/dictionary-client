@@ -2,7 +2,7 @@ import React from "react";
 import { gql, useMutation } from "@apollo/client";
 import { useNavigate } from "react-router-dom";
 
-import { BackButton, IconButton, TransperentButton } from "../Buttons";
+import { BackButton, IconButton, SecondaryButton } from "../Buttons";
 import { ROUTES } from "../../../constants";
 import Settings from "./images/Settings.png";
 import useLocalStorage from "../../../hooks/useLocalStorage";
@@ -53,7 +53,7 @@ const Header = ({ score }) => {
       <div className={classes.buttonContainer}>
         <IconButton onClick={() => navigate(ROUTES.settings)} icon={Settings} />
         {getItem("name") && (
-          <TransperentButton onClick={onLogout} name="Logout" betterSize />
+          <SecondaryButton onClick={onLogout} name="Logout" betterSize />
         )}
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, TransperentButton } from "../Buttons";
+import { PrimaryButton, SecondaryButton } from "../Buttons";
 import { CheckBox } from "../Inputs";
 import Title from "../Title";
 import useStyles from "./styles";
@@ -25,13 +25,13 @@ const Modal = ({
             onChange={onCheckBoxClick}
             label="Add another"
           />
-          <Button
+          <PrimaryButton
             disabled={disabled}
             onClick={onSubmit}
             betterSize
             name="Add"
           />
-          <TransperentButton
+          <SecondaryButton
             onClick={onCancel}
             betterSize
             exerciseColor

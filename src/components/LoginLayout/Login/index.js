@@ -8,6 +8,8 @@ import useLoginHandle from "../hooks/useLoginHandle";
 import LoadingSpinner from "../../common/LoadingSpinner";
 
 const Login = () => {
+  const classes = useStyles();
+
   const {
     handleEmailInputChange,
     handlePasswordInputChange,
@@ -16,8 +18,14 @@ const Login = () => {
     onLogin,
     errorMessage,
   } = useLoginHandle();
-  const classes = useStyles();
-  if (loading) return <LoadingSpinner />;
+
+  if (loading)
+    return (
+      <div className={classes.container}>
+        <LoadingSpinner />
+      </div>
+    );
+
   return (
     <form className={classes.form}>
       <Title title="Welcome back!" />
