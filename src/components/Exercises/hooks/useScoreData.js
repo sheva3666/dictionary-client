@@ -2,8 +2,8 @@ import { gql, useMutation, useQuery } from "@apollo/client";
 import useLocalStorage from "../../../hooks/useLocalStorage";
 
 const GET_USER_SCORE = gql`
-  query Score($userEmail: String!) {
-    score(userEmail: $userEmail) {
+  query Score($userEmail: String!, $language: String!) {
+    score(userEmail: $userEmail, language: $language) {
       userEmail
       score
     }
@@ -23,6 +23,7 @@ const useGetScore = ({ user }) => {
   const { data, loading } = useQuery(GET_USER_SCORE, {
     variables: {
       userEmail: user.userEmail,
+      language: user.languageForLearn,
     },
   });
   return { score: data, scoreLoading: loading };
@@ -45,6 +46,7 @@ const useExerciseData = () => {
           score: {
             userEmail: user.userEmail,
             score: newScore,
+            language: user.languageForLearn,
           },
         },
       }),

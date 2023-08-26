@@ -31,4 +31,13 @@ export default createUseStyles((theme) => ({
     alignItems: "center",
     marginTop: 70,
   },
+  error: {
+    display: "flex",
+    textAlign: "center",
+    flexDirection: "column",
+    gap: 20,
+    fontWeight: 400,
+    fontSize: 32,
+    margin: "0 auto",
+  },
 }));

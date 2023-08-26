@@ -14,22 +14,9 @@ const Table = ({ tableHeader, tableData }) => {
   return (
     <table className={classes.table}>
       <Header classes={classes} tableHeader={tableHeader} />
-      {!tableData?.length ? (
-        <div className={classes.error}>
-          <ErrorMessage
-            classes={classes}
-            message="You have to add new words to your dictionary."
-          />
-          <PrimaryButton
-            onClick={() => navigate(ROUTES.user)}
-            name="To Actions"
-          />
-        </div>
-      ) : (
-        tableData?.map((rowData) => (
-          <Row key={rowData.word} classes={classes} rowData={rowData} />
-        ))
-      )}
+      {tableData?.map((rowData) => (
+        <Row key={rowData.word} classes={classes} rowData={rowData} />
+      ))}
     </table>
   );
 };

@@ -94,4 +94,9 @@ export default createUseStyles((theme) => ({
     width: 500,
     margin: "0 auto",
   },
+
+  hidden: {
+    opacity: 0,
+    cursor: "none",
+  },
 }));

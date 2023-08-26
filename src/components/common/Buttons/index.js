@@ -73,13 +73,15 @@ export const LongButton = ({ name, onClick, disabled, marginTop }) => {
   );
 };
 
-export const BackButton = ({ name, onClick, disabled }) => {
+export const BackButton = ({ name, onClick, disabled, hidden }) => {
   const classes = useStyles();
   return (
     <button
       disabled={disabled}
       onClick={onClick}
-      className={classes.backButton}
+      className={classNames(classes.backButton, {
+        [classes.hidden]: hidden,
+      })}
     >
       {name}
     </button>

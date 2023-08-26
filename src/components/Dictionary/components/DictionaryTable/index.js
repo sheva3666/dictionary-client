@@ -7,6 +7,9 @@ import TableToolbar from "../TableToolbar";
 import { gql, useQuery } from "@apollo/client";
 import LoadingSpinner from "../../../common/LoadingSpinner";
 import { PrimaryButton } from "../../../common/Buttons";
+import { ErrorMessage } from "../../../common/Messages";
+import { ROUTES } from "../../../../constants";
+import { useNavigate } from "react-router-dom";
 
 const GET_WORDS = gql`
   query Words(
@@ -54,6 +57,7 @@ const createTableHeader = ({ language, languageForLearn }) =>
 const DictionaryTable = ({ classes }) => {
   const [searchQueryString, setSearchString] = useState("");
   const [page, setPage] = useState(1);
+  const navigate = useNavigate();
 
   const { getItem } = useLocalStorage();
   const { languageForLearn, language, userEmail } = getItem("user");
@@ -73,27 +77,42 @@ const DictionaryTable = ({ classes }) => {
   if (loading) return <LoadingSpinner />;
   return (
     <div>
-      <TableToolbar
-        searchValue={searchQueryString}
-        onSearch={setSearchString}
-        pages={data?.words.numberOfPages}
-        currentPage={data?.words.currentPage}
-      />
-      <Table tableHeader={tableHeader} tableData={data?.words?.words} />
-      <div className={classes.buttonContainer}>
-        <PrimaryButton
-          betterSize
-          name="Previouse page"
-          onClick={() => setPage(data?.words.currentPage - 1)}
-          disabled={data?.words.currentPage === 1}
-        />
-        <PrimaryButton
-          betterSize
-          name="Next page"
-          onClick={() => setPage(data?.words.currentPage + 1)}
-          disabled={data?.words.currentPage === data?.words.numberOfPages}
-        />
-      </div>
+      {!data?.words?.words?.length ? (
+        <div className={classes.error}>
+          <ErrorMessage
+            classes={classes}
+            message="You have to add new words to your dictionary."
+          />
+          <PrimaryButton
+            onClick={() => navigate(ROUTES.user)}
+            name="To Actions"
+          />
+        </div>
+      ) : (
+        <>
+          <TableToolbar
+            searchValue={searchQueryString}
+            onSearch={setSearchString}
+            pages={data?.words.numberOfPages}
+            currentPage={data?.words.currentPage}
+          />
+          <Table tableHeader={tableHeader} tableData={data?.words?.words} />
+          <div className={classes.buttonContainer}>
+            <PrimaryButton
+              betterSize
+              name="Previouse page"
+              onClick={() => setPage(data?.words.currentPage - 1)}
+              disabled={data?.words.currentPage === 1}
+            />
+            <PrimaryButton
+              betterSize
+              name="Next page"
+              onClick={() => setPage(data?.words.currentPage + 1)}
+              disabled={data?.words.currentPage === data?.words.numberOfPages}
+            />
+          </div>
+        </>
+      )}
     </div>
   );
 };

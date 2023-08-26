@@ -1,6 +1,6 @@
 import React from "react";
 import { gql, useMutation } from "@apollo/client";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import { BackButton, IconButton, SecondaryButton } from "../Buttons";
 import { ROUTES } from "../../../constants";
@@ -24,6 +24,7 @@ const Header = ({ score }) => {
 
   const { getItem, removeItem } = useLocalStorage();
   const navigate = useNavigate();
+  const location = useLocation();
   const classes = useStyles();
 
   const onLogout = async () => {
@@ -44,7 +45,11 @@ const Header = ({ score }) => {
   };
   return (
     <div className={classes.header}>
-      <BackButton name="< Back" onClick={() => navigate(ROUTES.user)} />
+      <BackButton
+        hidden={location.pathname === ROUTES.user}
+        name="< Back"
+        onClick={() => navigate(ROUTES.user)}
+      />
       {score && (
         <h2
           className={classes.score}
