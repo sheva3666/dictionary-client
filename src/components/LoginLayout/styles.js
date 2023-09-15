@@ -14,6 +14,7 @@ export default createUseStyles((theme) => ({
     background: "#fff",
     margin: "0 auto",
     marginTop: 80,
+    marginBottom: 80,
     maxWidth: 400,
     borderRadius: 20,
   },

@@ -3,7 +3,7 @@ import { createUseStyles } from "react-jss";
 export default createUseStyles((theme) => ({
   secondaryButton: {
     color: "#fff",
-    padding: "15px 62px",
+    padding: [15, 62],
     borderRadius: 20,
     border: "3px solid #fff",
     background: "transparent",
@@ -16,7 +16,7 @@ export default createUseStyles((theme) => ({
 
   primaryButton: {
     color: "#fff",
-    padding: "15px 62px",
+    padding: [15, 62],
     borderRadius: 20,
     border: "none",
     background:
@@ -32,7 +32,7 @@ export default createUseStyles((theme) => ({
 
   longButton: {
     color: "#fff",
-    padding: "15px 145px",
+    padding: [15, 145],
     borderRadius: 5,
     border: "none",
     background: "#0752AA",
@@ -45,7 +45,7 @@ export default createUseStyles((theme) => ({
 
   betterSize: {
     fontSize: 20,
-    padding: "5px 20px",
+    padding: [5, 20],
     border: "3px solid #00316B",
   },
 
@@ -80,7 +80,7 @@ export default createUseStyles((theme) => ({
 
   backButton: {
     color: "#fff",
-    padding: "5px 20px",
+    padding: [5, 20],
     background: "transparent",
     border: "none",
     cursor: "pointer",
@@ -91,7 +91,7 @@ export default createUseStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     color: "#fff",
-    padding: "5px 20px",
+    padding: [5, 20],
     background: "transparent",
     border: "none",
     cursor: "pointer",
@@ -110,5 +110,9 @@ export default createUseStyles((theme) => ({
   hidden: {
     opacity: 0,
     cursor: "none",
+  },
+
+  settngsWidth: {
+    padding: [15, 113],
   },
 }));

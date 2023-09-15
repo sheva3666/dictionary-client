@@ -80,7 +80,7 @@ const Settings = () => {
           value={updatedUser.language}
           name="Chose your language"
           onChange={handleLanguageSelectChange}
-          label="Your language"
+          label="What language do you use?"
           options={LANGUAGES}
           fixedWidth
         />
@@ -88,7 +88,7 @@ const Settings = () => {
           value={updatedUser.languageForLearn}
           name="Chose your language"
           onChange={handleLanguageForLearnSelectChange}
-          label="Your language"
+          label="What language do you learn?"
           options={LANGUAGES}
           fixedWidth
         />
@@ -103,7 +103,11 @@ const Settings = () => {
           settings
         />
 
-        <LongButton onClick={(e) => onSaveChanges(e)} name="Save changes" />
+        <LongButton
+          settngsWidth
+          onClick={(e) => onSaveChanges(e)}
+          name="Save changes"
+        />
       </div>
       ;
     </>

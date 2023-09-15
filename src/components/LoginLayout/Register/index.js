@@ -42,7 +42,7 @@ const Register = () => {
         </div>
       ) : (
         <form className={classes.form}>
-          <Title title="Create new account!" />
+          <Title title="Create a new account!" />
           {errorMessage && <ErrorMessage message={errorMessage} />}
           <EmailInput
             value={registerUser.email}
@@ -81,6 +81,7 @@ const Register = () => {
             onClick={(e) => onRegister(e)}
             disabled={disabled}
             name={loading ? "Loading..." : "Sign in"}
+            marginTop
           />
         </form>
       )}

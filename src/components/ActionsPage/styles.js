@@ -15,9 +15,12 @@ export default createUseStyles((theme) => ({
     },
   },
   text: {
-    width: 130,
+    width: 170,
     textAlign: "center",
     marginTop: 20,
+    fontWeight: "bold",
+    fontSize: 20,
+    color: "#0752AA",
   },
   icon: {
     width: "50%",
@@ -28,6 +31,6 @@ export default createUseStyles((theme) => ({
     justifyContent: "space-between",
     margin: "auto",
     marginTop: 250,
-    maxWidth: 1000,
+    maxWidth: 1200,
   },
 }));
