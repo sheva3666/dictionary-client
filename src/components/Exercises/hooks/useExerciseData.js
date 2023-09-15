@@ -23,8 +23,16 @@ const GET_RANDOM_WORD = gql`
 `;
 
 const GET_RANDOM_TRANSLATED_WORDS = gql`
-  query TranslatedWords($language: String!) {
-    translatedWords(language: $language) {
+  query TranslatedWords(
+    $user: String!
+    $languageForLearn: String!
+    $language: String!
+  ) {
+    translatedWords(
+      user: $user
+      languageForLearn: $languageForLearn
+      language: $language
+    ) {
       id
       user
       word
@@ -35,7 +43,11 @@ const GET_RANDOM_TRANSLATED_WORDS = gql`
 
 const useGetTranslatedWord = ({ user }) => {
   const { data, loading } = useQuery(GET_RANDOM_TRANSLATED_WORDS, {
-    variables: { language: user.language },
+    variables: {
+      user: user.userEmail,
+      languageForLearn: user.languageForLearn,
+      language: user.language,
+    },
     fetchPolicy: "no-cache",
   });
   return {

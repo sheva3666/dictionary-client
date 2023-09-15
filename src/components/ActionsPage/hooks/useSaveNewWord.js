@@ -15,7 +15,7 @@ const ADD_WORD = gql`
 `;
 
 const useSaveNewWord = ({ setIsModalOpen, addAnother }) => {
-  const [addWord, { data, loading, error }] = useMutation(ADD_WORD);
+  const [addWord, { loading, error }] = useMutation(ADD_WORD);
   const [word, setWord] = useState({
     word: "",
     translate: "",
@@ -38,7 +38,7 @@ const useSaveNewWord = ({ setIsModalOpen, addAnother }) => {
       word: "",
       translate: "",
     });
-    if (!addAnother) {
+    if (!addAnother || word.word === "") {
       setIsModalOpen(false);
     }
   };
