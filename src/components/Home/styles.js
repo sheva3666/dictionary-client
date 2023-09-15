@@ -14,8 +14,9 @@ export default createUseStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    gap: 60,
     margin: "0 auto",
     marginTop: 200,
-    maxWidth: 800,
+    maxWidth: 1200,
   },
 }));

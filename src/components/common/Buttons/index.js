@@ -33,7 +33,7 @@ export const SecondaryButton = ({
 export const PrimaryButton = ({
   name,
   onClick,
-  betterSize,
+  exerciseStyle,
   disabled,
   width,
   correct,
@@ -45,7 +45,7 @@ export const PrimaryButton = ({
       disabled={disabled}
       onClick={onClick}
       className={classNames(classes.primaryButton, {
-        [classes.betterSize]: betterSize,
+        [classes.exerciseStyle]: exerciseStyle,
         [classes.width]: width,
         [classes.red]: incorrect,
         [classes.green]: correct,

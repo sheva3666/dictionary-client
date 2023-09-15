@@ -3,7 +3,6 @@ import { createUseStyles } from "react-jss";
 export default createUseStyles((theme) => ({
   container: {
     display: "flex",
-    justifyContent: "space-between",
     alignItems: "center",
     color: "#fff",
   },

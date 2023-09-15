@@ -2,10 +2,12 @@ import { createUseStyles } from "react-jss";
 
 export default createUseStyles((theme) => ({
   container: {
-    display: "flex",
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
     gap: 60,
-    justifyContent: "space-between",
-    alignItems: "center",
     margin: "20px 20px",
+    "&:last-child": {
+      margin: "0 auto",
+    },
   },
 }));

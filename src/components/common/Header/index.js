@@ -53,7 +53,7 @@ const Header = ({ score }) => {
       {score && (
         <h2
           className={classes.score}
-        >{`Hello ${score?.userEmail} your current score is ${score?.score}`}</h2>
+        >{`Hello! ${score?.userEmail} your current score is ${score?.score}`}</h2>
       )}
       <div className={classes.buttonContainer}>
         <IconButton onClick={() => navigate(ROUTES.settings)} icon={Settings} />

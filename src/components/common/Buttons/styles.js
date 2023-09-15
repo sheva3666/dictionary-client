@@ -4,8 +4,8 @@ export default createUseStyles((theme) => ({
   secondaryButton: {
     color: "#fff",
     padding: "15px 62px",
-    borderRadius: 5,
-    border: "1px solid #0075FF",
+    borderRadius: 20,
+    border: "3px solid #fff",
     background: "transparent",
     cursor: "pointer",
     fontSize: 32,
@@ -17,13 +17,16 @@ export default createUseStyles((theme) => ({
   primaryButton: {
     color: "#fff",
     padding: "15px 62px",
-    borderRadius: 5,
-    border: "1px solid #0075FF",
-    background: "#0752AA",
+    borderRadius: 20,
+    border: "none",
+    background:
+      "linear-gradient(175deg, rgba(0,117,255,1) 0%, rgba(7,82,170,0.6) 100%, rgba(33,33,208,1) 100%, rgba(0,212,255,1) 100%)",
     cursor: "pointer",
     fontSize: 32,
     "&:hover": {
-      background: "#00316B",
+      background:
+        "linear-gradient(175deg, rgba(254,254,254,1) 0%, rgba(61,146,245,0.6) 100%, rgba(33,33,208,1) 100%, rgba(0,212,255,1) 100%)",
+      color: "#00316B",
     },
   },
 
@@ -48,6 +51,13 @@ export default createUseStyles((theme) => ({
 
   exerciseColor: {
     color: "#00316B",
+    borderRadius: 20,
+    border: "2px solid",
+    "&:hover": {
+      background: "#00316B",
+      color: "#fff",
+      border: "2px solid #fff",
+    },
   },
 
   disabled: {
@@ -61,9 +71,11 @@ export default createUseStyles((theme) => ({
   },
   green: {
     background: "green",
+    color: "#fff",
   },
   red: {
     background: "red",
+    color: "#fff",
   },
 
   backButton: {
@@ -90,8 +102,8 @@ export default createUseStyles((theme) => ({
     marginTop: 50,
   },
 
-  exerciseWidth: {
-    width: 500,
+  exerciseStyle: {
+    borderRadius: 20,
     margin: "0 auto",
   },
 

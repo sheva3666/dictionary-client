@@ -77,9 +77,8 @@ const Exercises = () => {
             />
             <PrimaryButton
               disabled={!correct}
-              betterSize
               onClick={onClickNext}
-              exerciseWidth
+              exerciseStyle
               name="Next word"
             />
           </div>

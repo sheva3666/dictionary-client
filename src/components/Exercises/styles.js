@@ -4,10 +4,10 @@ export default createUseStyles((theme) => ({
   exercises: {
     display: "flex",
     flexDirection: "column",
-    gap: 70,
+    gap: 40,
     alignItems: "center",
     background: "#fff",
-    width: "60%",
+    width: "45%",
     margin: "100px 20px",
     paddingBottom: 40,
     borderRadius: 30,
