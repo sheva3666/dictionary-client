@@ -8,7 +8,8 @@ export default createUseStyles((theme) => ({
     background: "#fff",
     padding: "10px 20px",
     borderRadius: "10px 10px 0px 0px ",
-    border: "1px solid #00316B",
+    border: "2px solid #00316B",
+    color: "#00316B",
   },
   pagesInfo: {
     display: "flex",

@@ -51,4 +51,8 @@ export default createUseStyles((theme) => ({
     paddingTop: 10,
     paddingBottom: 10,
   },
+
+  customColor: {
+    border: "2px solid #00316B",
+  },
 }));

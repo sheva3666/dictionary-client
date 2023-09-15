@@ -9,6 +9,9 @@ export default createUseStyles((theme) => ({
     display: "flex",
     gap: 90,
   },
+  rowCell: {
+    borderRight: "1px solid",
+  },
   container: {
     padding: "70px 100px 200px 60px",
     background: "#fff",

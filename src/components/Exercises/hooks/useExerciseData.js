@@ -76,7 +76,6 @@ const useExerciseData = () => {
     }
   );
   const { word, wordLoading } = useGetWord({ user });
-  console.log(translatedWordsLoading);
 
   return {
     translatedWords:

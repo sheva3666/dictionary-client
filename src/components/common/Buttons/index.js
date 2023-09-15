@@ -38,6 +38,7 @@ export const PrimaryButton = ({
   width,
   correct,
   incorrect,
+  betterSize,
 }) => {
   const classes = useStyles();
   return (
@@ -50,6 +51,7 @@ export const PrimaryButton = ({
         [classes.red]: incorrect,
         [classes.green]: correct,
         [classes.disabled]: disabled,
+        [classes.betterSize]: betterSize,
       })}
     >
       {name}

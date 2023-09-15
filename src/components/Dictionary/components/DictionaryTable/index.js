@@ -100,13 +100,13 @@ const DictionaryTable = ({ classes }) => {
           <div className={classes.buttonContainer}>
             <PrimaryButton
               betterSize
-              name="Previouse page"
+              name="Back"
               onClick={() => setPage(data?.words.currentPage - 1)}
               disabled={data?.words.currentPage === 1}
             />
             <PrimaryButton
               betterSize
-              name="Next page"
+              name="Next"
               onClick={() => setPage(data?.words.currentPage + 1)}
               disabled={data?.words.currentPage === data?.words.numberOfPages}
             />

@@ -13,6 +13,8 @@ import { ErrorMessage } from "../common/Messages";
 import { GET_AUTH } from "../routes/PrivateRoute";
 
 import useStyles from "./styles";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../constants";
 
 const UPDATE_USER = gql`
   mutation UpdateUser($user: UpdateUserInput!) {
@@ -29,6 +31,7 @@ const UPDATE_USER = gql`
 const Settings = () => {
   const { getItem } = useLocalStorage();
   const user = getItem("user");
+  const navigate = useNavigate();
   const [updatedUser, setUpdatedUser] = useState({
     email: user.userEmail,
     password: "",
@@ -65,7 +68,9 @@ const Settings = () => {
     try {
       await updateUser({
         variables: { user: updatedUser },
-      }).then(setUpdatedUser({ ...updatedUser, password: "" }));
+      })
+        .then(setUpdatedUser({ ...updatedUser, password: "" }))
+        .then(() => navigate(ROUTES.user));
     } catch (error) {
       console.log(error);
     }

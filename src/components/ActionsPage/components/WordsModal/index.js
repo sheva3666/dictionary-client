@@ -39,7 +39,7 @@ const WordsModal = ({ setIsModalOpen }) => {
       onSubmit={onSaveWord}
       checkBoxValue={addAnother}
       onCheckBoxClick={handleCheckBox}
-      title="Please add new word to dictionary"
+      title="Add a new word"
     >
       {errorMessage && <ErrorMessage message={errorMessage} />}
       <div className={classes.container}>

@@ -17,6 +17,7 @@ const SearchField = ({ onSearch, value }) => {
 
   return (
     <Input
+      customColor
       placeholder={"Search"}
       value={searchInputValue}
       onChange={handleChange}

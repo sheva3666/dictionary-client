@@ -62,7 +62,9 @@ const useSaveNewWord = ({ setIsModalOpen, addAnother }) => {
     } catch (error) {
       console.log(error);
     }
-    onClose();
+    if (!error?.message) {
+      onClose();
+    }
   };
 
   return {

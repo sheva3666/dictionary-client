@@ -2,6 +2,8 @@ import { createUseStyles } from "react-jss";
 
 export default createUseStyles((theme) => ({
   loader: {
+    margin: "0 auto",
+    marginTop: 300,
     border: "10px solid #f3f3f3",
     borderTop: "10px solid #3498db",
     borderRadius: "50%",

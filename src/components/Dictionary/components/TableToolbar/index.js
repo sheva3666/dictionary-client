@@ -10,7 +10,7 @@ const TableToolbar = ({ pages, currentPage, onSearch, searchValue }) => {
         <h2 className={classes.title}>All pages({pages})</h2>
         <h2 className={classes.title}>Current page({currentPage})</h2>
       </div>
-      <SearchField onSearch={onSearch} value={searchValue} />
+      <SearchField customColor onSearch={onSearch} value={searchValue} />
     </div>
   );
 };

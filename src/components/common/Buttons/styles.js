@@ -45,8 +45,8 @@ export default createUseStyles((theme) => ({
 
   betterSize: {
     fontSize: 20,
-    padding: [5, 20],
-    border: "3px solid #00316B",
+    padding: [10, 25],
+    // border: "3px solid #00316B",
   },
 
   exerciseColor: {
