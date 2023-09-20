@@ -10,4 +10,8 @@ export default createUseStyles((theme) => ({
       margin: "0 auto",
     },
   },
+
+  threeWords: {
+    gridTemplateColumns: "1fr 1fr 1fr",
+  },
 }));

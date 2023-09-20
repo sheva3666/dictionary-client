@@ -62,6 +62,10 @@ const useSaveNewWord = ({ setIsModalOpen, addAnother }) => {
     } catch (error) {
       console.log(error);
     }
+    setWord({
+      word: "",
+      translate: "",
+    });
     if (!error?.message) {
       onClose();
     }

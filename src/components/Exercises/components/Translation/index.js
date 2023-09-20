@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React, { useMemo } from "react";
 import { answers } from "../..";
 import { SecondaryButton } from "../../../common/Buttons";
@@ -8,11 +9,16 @@ const Translation = ({ checkWord, words, onCheck, correct }) => {
 
   const random = useMemo(
     () => words?.sort(() => Math.random() - 0.5),
-    [checkWord]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [checkWord, words?.length]
   );
 
   return (
-    <div className={classes.container}>
+    <div
+      className={classNames(classes.container, {
+        [classes.threeWords]: words?.length === 3,
+      })}
+    >
       {random?.map(({ word }) => {
         return (
           <SecondaryButton
