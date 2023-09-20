@@ -43,24 +43,35 @@ const Header = ({ score }) => {
     removeItem("user");
     navigate(ROUTES.home);
   };
+
+  const isLoginRegisterPath =
+    location.pathname === ROUTES.login || location.pathname === ROUTES.register;
+
+  const urlForBackButton = isLoginRegisterPath ? ROUTES.home : ROUTES.user;
+
   return (
     <div className={classes.header}>
       <BackButton
         hidden={location.pathname === ROUTES.user}
         name="< Back"
-        onClick={() => navigate(ROUTES.user)}
+        onClick={() => navigate(urlForBackButton)}
       />
       {score && (
         <h2
           className={classes.score}
         >{`Hello! ${score?.userEmail} your current score is ${score?.score}`}</h2>
       )}
-      <div className={classes.buttonContainer}>
-        <IconButton onClick={() => navigate(ROUTES.settings)} icon={Settings} />
-        {getItem("name") && (
-          <SecondaryButton onClick={onLogout} name="Logout" betterSize />
-        )}
-      </div>
+      {!isLoginRegisterPath && (
+        <div className={classes.buttonContainer}>
+          <IconButton
+            onClick={() => navigate(ROUTES.settings)}
+            icon={Settings}
+          />
+          {getItem("name") && (
+            <SecondaryButton onClick={onLogout} name="Logout" betterSize />
+          )}
+        </div>
+      )}
     </div>
   );
 };
