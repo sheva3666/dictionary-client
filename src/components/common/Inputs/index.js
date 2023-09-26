@@ -48,7 +48,14 @@ export const PasswordInput = ({
   );
 };
 
-export const Input = ({ onChange, placeholder, label, value, customColor }) => {
+export const Input = ({
+  onChange,
+  placeholder,
+  label,
+  value,
+  customColor,
+  invalidInput,
+}) => {
   const classes = useStyles();
 
   return (
@@ -59,6 +66,7 @@ export const Input = ({ onChange, placeholder, label, value, customColor }) => {
       <input
         className={classNames(classes.passwordInput, {
           [classes.customColor]: customColor,
+          [classes.error]: invalidInput,
         })}
         value={value}
         type="text"

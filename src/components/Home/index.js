@@ -10674,8 +10674,6 @@ const Home = () => {
       aggregationType: "CASE",
     },
   ];
-  console.log(metrics);
-  console.log(metrics2);
 
   return (
     <div className={classes.container}>

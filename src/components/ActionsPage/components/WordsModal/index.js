@@ -30,6 +30,7 @@ const WordsModal = ({ setIsModalOpen }) => {
     errorMessage,
     onClose,
     savingDisabled,
+    inputIsValid,
   } = useSaveNewWord({ setIsModalOpen, addAnother });
 
   return (
@@ -44,11 +45,13 @@ const WordsModal = ({ setIsModalOpen }) => {
       {errorMessage && <ErrorMessage message={errorMessage} />}
       <div className={classes.container}>
         <Input
+          invalidInput={!inputIsValid(word.word)}
           onChange={handleLearningInputChange}
           value={word.word}
           label={capitalizeFirstLetter(languageForLearn)}
         />
         <Input
+          invalidInput={!inputIsValid(word.translate)}
           onChange={handleTranslateInputChange}
           value={word.translate}
           label={capitalizeFirstLetter(language)}

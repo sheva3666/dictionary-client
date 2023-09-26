@@ -14,11 +14,7 @@ const Translation = ({ checkWord, words, onCheck, correct }) => {
   );
 
   return (
-    <div
-      className={classNames(classes.container, {
-        [classes.threeWords]: words?.length === 3,
-      })}
-    >
+    <div className={classNames(classes.container)}>
       {random?.map(({ word }) => {
         return (
           <SecondaryButton

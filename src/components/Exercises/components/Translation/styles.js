@@ -9,8 +9,10 @@ export default createUseStyles((theme) => ({
     "&:last-child": {
       margin: "0 auto",
     },
+    "@media screen and (maxWidth: 1184px)": {
+      gridTemplateColumns: "1fr",
+    },
   },
-
   threeWords: {
     gridTemplateColumns: "1fr 1fr 1fr",
   },
