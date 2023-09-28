@@ -120,4 +120,10 @@ export default createUseStyles((theme) => ({
     display: "flex",
     gap: 5,
   },
+
+  "@media only screen and (max-width: 900px)": {
+    longButton: {
+      padding: [15, 50],
+    },
+  },
 }));

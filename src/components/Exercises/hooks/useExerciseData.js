@@ -57,7 +57,6 @@ const useGetTranslatedWord = ({ user }) => {
 };
 
 const useGetWord = ({ user }) => {
-  console.log(user);
   const { data, loading } = useQuery(GET_RANDOM_WORD, {
     variables: {
       user: user.email,
@@ -71,7 +70,6 @@ const useGetWord = ({ user }) => {
 const useExerciseData = () => {
   const { getItem } = useLocalStorage();
   const user = getItem("user");
-  console.log(user);
   const { translatedWords = [], translatedWordsLoading } = useGetTranslatedWord(
     { user }
   );

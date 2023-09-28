@@ -36,4 +36,10 @@ export default createUseStyles((theme) => ({
     fontSize: 32,
     margin: "0 auto",
   },
+  "@media only screen and (max-width: 900px)": {
+    headerCell: {
+      width: 100,
+      fontSize: 30,
+    },
+  },
 }));

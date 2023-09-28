@@ -21,4 +21,16 @@ export default createUseStyles((theme) => ({
     color: "#fff",
     marginLeft: 100,
   },
+  "@media only screen and (max-width: 900px)": {
+    header: {
+      padding: "10px 5px",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+    },
+    score: {
+      marginLeft: 0,
+      fontSize: 9,
+    },
+  },
 }));

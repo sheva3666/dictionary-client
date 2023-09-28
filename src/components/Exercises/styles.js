@@ -30,4 +30,10 @@ export default createUseStyles((theme) => ({
     display: "flex",
     margin: "0 auto",
   },
+  "@media only screen and (max-width: 900px)": {
+    exercises: {
+      width: "90%",
+      gap: 20,
+    },
+  },
 }));

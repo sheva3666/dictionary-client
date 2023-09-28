@@ -34,7 +34,12 @@ export default createUseStyles((theme) => ({
     padding: 20,
     gap: 20,
     margin: "auto",
-    marginTop: 250,
+    marginTop: 200,
     maxWidth: 1200,
+  },
+  "@media only screen and (max-width: 900px)": {
+    container: {
+      marginTop: 100,
+    },
   },
 }));

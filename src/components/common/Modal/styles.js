@@ -35,4 +35,11 @@ export default createUseStyles((theme) => ({
     alignItems: "center",
     padding: "20px 20px",
   },
+
+  "@media only screen and (max-width: 900px)": {
+    content: {
+      width: "85%",
+      margin: "30% auto",
+    },
+  },
 }));

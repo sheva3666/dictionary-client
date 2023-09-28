@@ -21,4 +21,10 @@ export default createUseStyles((theme) => ({
     margin: 0,
     width: 130,
   },
+  "@media only screen and (max-width: 900px)": {
+    toolBar: {
+      flexDirection: "column",
+      gap: 15,
+    },
+  },
 }));

@@ -19,4 +19,16 @@ export default createUseStyles((theme) => ({
     marginTop: 200,
     maxWidth: 1200,
   },
+  "@media only screen and (max-width: 900px)": {
+    buttonsContainer: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 10,
+    },
+    title: {
+      color: "#fff",
+      fontSize: 36,
+      textAlign: "center",
+    },
+  },
 }));
