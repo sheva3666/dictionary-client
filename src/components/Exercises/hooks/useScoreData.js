@@ -22,7 +22,7 @@ const UPDATE_USER_SCORE = gql`
 const useGetScore = ({ user }) => {
   const { data, loading } = useQuery(GET_USER_SCORE, {
     variables: {
-      userEmail: user.userEmail,
+      userEmail: user.email,
       language: user.languageForLearn,
     },
   });
@@ -44,7 +44,7 @@ const useExerciseData = () => {
       updateScore({
         variables: {
           score: {
-            userEmail: user.userEmail,
+            userEmail: user.email,
             score: newScore,
             language: user.languageForLearn,
           },

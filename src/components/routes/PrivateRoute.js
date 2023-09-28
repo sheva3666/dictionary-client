@@ -1,16 +1,15 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
 import { gql, useQuery } from "@apollo/client";
 
 import LoadingSpinner from "../common/LoadingSpinner";
-import { ROUTES } from "../../constants";
 import useLocalStorage from "../../hooks/useLocalStorage";
+import { Navigate } from "react-router-dom";
+import { ROUTES } from "../../constants";
 
-export const GET_AUTH = gql`
-  query Auth($userEmail: String!) {
-    auth(userEmail: $userEmail) {
-      userEmail
-      userAuth
+export const GET_USER = gql`
+  query User($user: String!) {
+    user(user: $user) {
+      email
       language
       languageForLearn
     }
@@ -20,16 +19,16 @@ export const GET_AUTH = gql`
 const PrivateRoute = ({ component: Component }) => {
   const { getItem } = useLocalStorage();
 
-  const { data, loading } = useQuery(GET_AUTH, {
+  const { data, loading, error } = useQuery(GET_USER, {
     variables: {
-      userEmail: getItem("user").userEmail,
+      user: getItem("user").email || "",
     },
   });
 
   if (loading) return <LoadingSpinner />;
-  data?.auth && localStorage.setItem("user", JSON.stringify(data?.auth));
+  data?.user && localStorage.setItem("user", JSON.stringify(data?.user));
 
-  return data?.auth?.userAuth ? <Component /> : <Navigate to={ROUTES.login} />;
+  return !error ? <Component /> : <Navigate to={ROUTES.login} />;
 };
 
 export default PrivateRoute;

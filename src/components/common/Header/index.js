@@ -28,19 +28,8 @@ const Header = ({ score }) => {
   const classes = useStyles();
 
   const onLogout = async () => {
-    const user = getItem("user");
-    await updateAuth({
-      variables: {
-        email: user.userEmail,
-        auth: {
-          userAuth: false,
-          userEmail: user.userEmail,
-          language: user.language,
-          languageForLearn: user.languageForLearn,
-        },
-      },
-    });
     removeItem("user");
+    removeItem("token");
     navigate(ROUTES.home);
   };
 

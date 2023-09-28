@@ -44,7 +44,7 @@ const GET_RANDOM_TRANSLATED_WORDS = gql`
 const useGetTranslatedWord = ({ user }) => {
   const { data, loading } = useQuery(GET_RANDOM_TRANSLATED_WORDS, {
     variables: {
-      user: user.userEmail,
+      user: user.email,
       languageForLearn: user.languageForLearn,
       language: user.language,
     },
@@ -57,9 +57,10 @@ const useGetTranslatedWord = ({ user }) => {
 };
 
 const useGetWord = ({ user }) => {
+  console.log(user);
   const { data, loading } = useQuery(GET_RANDOM_WORD, {
     variables: {
-      user: user.userEmail,
+      user: user.email,
       language: user.languageForLearn,
       translateLanguage: user.language,
     },
@@ -70,10 +71,9 @@ const useGetWord = ({ user }) => {
 const useExerciseData = () => {
   const { getItem } = useLocalStorage();
   const user = getItem("user");
+  console.log(user);
   const { translatedWords = [], translatedWordsLoading } = useGetTranslatedWord(
-    {
-      user,
-    }
+    { user }
   );
   const { word, wordLoading } = useGetWord({ user });
 

@@ -10,7 +10,7 @@ import { LongButton } from "../common/Buttons";
 import Title from "../common/Title";
 import { ErrorMessage } from "../common/Messages";
 
-import { GET_AUTH } from "../routes/PrivateRoute";
+import { GET_USER } from "../routes/PrivateRoute";
 
 import useStyles from "./styles";
 import { useNavigate } from "react-router-dom";
@@ -19,9 +19,7 @@ import { ROUTES } from "../../constants";
 const UPDATE_USER = gql`
   mutation UpdateUser($user: UpdateUserInput!) {
     updateUser(user: $user) {
-      id
       email
-      password
       language
       languageForLearn
     }
@@ -33,8 +31,7 @@ const Settings = () => {
   const user = getItem("user");
   const navigate = useNavigate();
   const [updatedUser, setUpdatedUser] = useState({
-    email: user.userEmail,
-    password: "",
+    email: user.email,
     language: user.language,
     languageForLearn: user.languageForLearn,
   });
@@ -42,9 +39,9 @@ const Settings = () => {
   const [updateUser, { error }] = useMutation(UPDATE_USER, {
     refetchQueries: [
       {
-        query: GET_AUTH,
+        query: GET_USER,
         variables: {
-          userEmail: getItem("user").userEmail,
+          user: getItem("user").email,
         },
       },
     ],

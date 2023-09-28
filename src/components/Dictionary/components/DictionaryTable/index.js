@@ -60,13 +60,13 @@ const DictionaryTable = ({ classes }) => {
   const navigate = useNavigate();
 
   const { getItem } = useLocalStorage();
-  const { languageForLearn, language, userEmail } = getItem("user");
+  const { languageForLearn, language, email } = getItem("user");
   const tableHeader = createTableHeader({ language, languageForLearn });
   console.log(searchQueryString);
 
   const { data, loading } = useQuery(GET_WORDS, {
     variables: {
-      user: userEmail,
+      user: email,
       language: languageForLearn,
       translateLanguage: language,
       page,

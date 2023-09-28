@@ -6,12 +6,9 @@ import { ROUTES } from "../../../constants";
 import useLocalStorage from "../../../hooks/useLocalStorage";
 
 const LOGIN_USER = gql`
-  mutation CreateUser($email: String!, $password: String!) {
+  mutation Mutation($email: String!, $password: String!) {
     loginUser(email: $email, password: $password) {
-      userEmail
-      userAuth
-      language
-      languageForLearn
+      token
     }
   }
 `;
@@ -26,12 +23,23 @@ const useLoginHandle = () => {
 
   const [loginUser, { loading, error }] = useMutation(LOGIN_USER);
 
+  console.log(error);
+
   const handleEmailInputChange = (value) => {
     setLoginUser({ ...user, email: value });
   };
 
   const handlePasswordInputChange = (value) => {
     setLoginUser({ ...user, password: value });
+  };
+
+  const afterLogin = (response) => {
+    if (response) {
+      setItem(response?.data.loginUser.token, "token");
+      setItem({ email: user.email }, "user");
+      setLoginUser({ email: "", password: "" });
+      getItem("token") && navigate(ROUTES.user);
+    }
   };
 
   const onLogin = async (e) => {
@@ -42,12 +50,10 @@ const useLoginHandle = () => {
           email: user.email,
           password: user.password,
         },
-      }).then((res) => setItem(res?.data.loginUser, "user"));
+      }).then((res) => afterLogin(res));
     } catch (error) {
       console.log(error);
     }
-    setLoginUser({ email: "", password: "" });
-    getItem("user").userAuth === true && navigate(ROUTES.user);
   };
 
   return {

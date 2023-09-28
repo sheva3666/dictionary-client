@@ -12,12 +12,17 @@ import {
 import { BrowserRouter as Router } from "react-router-dom";
 import { setContext } from "@apollo/client/link/context";
 import { onError } from "@apollo/client/link/error";
+import { ROUTES } from "./constants";
 
 const httpLink = createHttpLink({
   uri: "http://localhost:4000",
 });
 
-const errorLink = onError(({ response, graphQLErrors }) => {
+const errorLink = onError(({ response, graphQLErrors, networkError }) => {
+  console.log(graphQLErrors);
+  if (graphQLErrors[0].extensions.code === "UNAUTHENTICATED") {
+    window.location.href = `http://localhost:3000${ROUTES.login}`;
+  }
   if (graphQLErrors) {
     try {
       JSON.parse(graphQLErrors);
@@ -32,7 +37,7 @@ const errorLink = onError(({ response, graphQLErrors }) => {
 const appLink = from([errorLink, httpLink]);
 
 const authLink = setContext((_, { headers }) => {
-  const token = process.env.REACT_APP_AUTH_TOKEN_KEY;
+  const token = JSON.parse(localStorage.getItem("token"));
   // return the headers to the context so httpLink can read them
   return {
     headers: {
