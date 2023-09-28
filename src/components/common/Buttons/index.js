@@ -109,3 +109,34 @@ export const IconButton = ({ onClick, disabled, icon }) => {
     </button>
   );
 };
+
+export const DoubleButton = ({
+  firstName,
+  secondName,
+  onClick,
+  selectedButton,
+}) => {
+  const classes = useStyles();
+  return (
+    <div className={classes.doubleButtonContainer}>
+      <button
+        onClick={onClick}
+        disabled={selectedButton === firstName}
+        className={classNames(classes.primaryButton, classes.betterSize, {
+          [classes.disabled]: selectedButton === firstName,
+        })}
+      >
+        {firstName}
+      </button>
+      <button
+        disabled={selectedButton === secondName}
+        onClick={onClick}
+        className={classNames(classes.primaryButton, classes.betterSize, {
+          [classes.disabled]: selectedButton === secondName,
+        })}
+      >
+        {secondName}
+      </button>
+    </div>
+  );
+};

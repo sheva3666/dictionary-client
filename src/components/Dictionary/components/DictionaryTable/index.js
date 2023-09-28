@@ -62,7 +62,6 @@ const DictionaryTable = ({ classes }) => {
   const { getItem } = useLocalStorage();
   const { languageForLearn, language, email } = getItem("user");
   const tableHeader = createTableHeader({ language, languageForLearn });
-  console.log(searchQueryString);
 
   const { data, loading } = useQuery(GET_WORDS, {
     variables: {

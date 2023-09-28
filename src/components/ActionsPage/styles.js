@@ -3,6 +3,8 @@ import { createUseStyles } from "react-jss";
 export default createUseStyles((theme) => ({
   box: {
     display: "flex",
+    flexGrow: 1,
+    flexBasis: 200,
     flexDirection: "column",
     alignItems: "center",
     padding: "80px 80px",
@@ -28,7 +30,9 @@ export default createUseStyles((theme) => ({
   },
   container: {
     display: "flex",
-    justifyContent: "space-between",
+    flexWrap: "wrap",
+    padding: 20,
+    gap: 20,
     margin: "auto",
     marginTop: 250,
     maxWidth: 1200,

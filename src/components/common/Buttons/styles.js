@@ -115,4 +115,9 @@ export default createUseStyles((theme) => ({
   settngsWidth: {
     padding: [15, 113],
   },
+
+  doubleButtonContainer: {
+    display: "flex",
+    gap: 5,
+  },
 }));

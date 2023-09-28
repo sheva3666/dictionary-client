@@ -29,7 +29,7 @@ const useSaveNewWord = ({ setIsModalOpen, addAnother }) => {
     return true;
   };
 
-  const { userEmail, language, languageForLearn } = JSON.parse(
+  const { email, language, languageForLearn } = JSON.parse(
     localStorage.getItem("user")
   );
 
@@ -53,13 +53,13 @@ const useSaveNewWord = ({ setIsModalOpen, addAnother }) => {
 
   const savingDisabled =
     !word.word ||
-    word.translate ||
-    inputIsValid(word.word) ||
-    inputIsValid(word.translate);
+    !word.translate ||
+    !inputIsValid(word.word) ||
+    !inputIsValid(word.translate);
 
   const onSaveWord = async () => {
     const newWord = {
-      user: userEmail,
+      user: email,
       word: word.word,
       language: languageForLearn,
       translate: word.translate,
