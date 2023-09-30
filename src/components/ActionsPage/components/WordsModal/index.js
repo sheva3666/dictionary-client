@@ -43,6 +43,9 @@ const WordsModal = ({ setIsModalOpen }) => {
       title="Add a new word"
     >
       {errorMessage && <ErrorMessage message={errorMessage} />}
+      {(!inputIsValid(word.word) || !inputIsValid(word.translate)) && (
+        <ErrorMessage message="Words should include only letters." />
+      )}
       <div className={classes.container}>
         <Input
           invalidInput={!inputIsValid(word.word)}

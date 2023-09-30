@@ -10,8 +10,9 @@ import { PrimaryButton } from "../../../common/Buttons";
 import { ErrorMessage } from "../../../common/Messages";
 import { ROUTES } from "../../../../constants";
 import { useNavigate } from "react-router-dom";
+import WordsForm from "../WordsForm";
 
-const GET_WORDS = gql`
+export const GET_WORDS = gql`
   query Words(
     $user: String!
     $language: String!
@@ -63,7 +64,7 @@ const DictionaryTable = ({ classes }) => {
   const { languageForLearn, language, email } = getItem("user");
   const tableHeader = createTableHeader({ language, languageForLearn });
 
-  const { data, loading } = useQuery(GET_WORDS, {
+  const { data, loading, error } = useQuery(GET_WORDS, {
     variables: {
       user: email,
       language: languageForLearn,
@@ -76,8 +77,9 @@ const DictionaryTable = ({ classes }) => {
   if (loading) return <LoadingSpinner />;
   return (
     <div>
-      {!data?.words?.words?.length ? (
+      {!data?.words?.words?.length && !searchQueryString ? (
         <div className={classes.error}>
+          <WordsForm />
           <ErrorMessage
             classes={classes}
             message="You have to add new words to your dictionary."
@@ -89,6 +91,7 @@ const DictionaryTable = ({ classes }) => {
         </div>
       ) : (
         <>
+          <WordsForm />
           <TableToolbar
             searchValue={searchQueryString}
             onSearch={setSearchString}

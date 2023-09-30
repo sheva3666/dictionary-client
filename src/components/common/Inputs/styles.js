@@ -55,4 +55,10 @@ export default createUseStyles((theme) => ({
   customColor: {
     border: "2px solid #00316B",
   },
+  "@media only screen and (max-width: 900px)": {
+    label: {
+      fontWeight: "bold",
+      fontSize: 20,
+    },
+  },
 }));

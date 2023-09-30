@@ -1,5 +1,6 @@
 import { gql, useMutation } from "@apollo/client";
 import { useState } from "react";
+import { GET_WORDS } from "../../Dictionary/components/DictionaryTable";
 
 const ADD_WORD = gql`
   mutation Mutation($word: WordInput!) {
@@ -15,7 +16,12 @@ const ADD_WORD = gql`
 `;
 
 const useSaveNewWord = ({ setIsModalOpen, addAnother }) => {
-  const [addWord, { loading, error }] = useMutation(ADD_WORD);
+  const { email, language, languageForLearn } = JSON.parse(
+    localStorage.getItem("user")
+  );
+  const [addWord, { loading, error }] = useMutation(ADD_WORD, {
+    refetchQueries: ["Words"],
+  });
   const [word, setWord] = useState({
     word: "",
     translate: "",
@@ -28,10 +34,6 @@ const useSaveNewWord = ({ setIsModalOpen, addAnother }) => {
     }
     return true;
   };
-
-  const { email, language, languageForLearn } = JSON.parse(
-    localStorage.getItem("user")
-  );
 
   const handleLearningInputChange = (value) => {
     setWord({ ...word, word: value });
