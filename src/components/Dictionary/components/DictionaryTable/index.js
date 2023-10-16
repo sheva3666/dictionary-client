@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Table from "../../../common/Table";
 import { compact } from "lodash";
 import useLocalStorage from "../../../../hooks/useLocalStorage";
@@ -72,7 +72,14 @@ const DictionaryTable = ({ classes }) => {
       page,
       searchString: searchQueryString || "null",
     },
+    fetchPolicy: "no-cache",
   });
+
+  useEffect(() => {
+    if (searchQueryString.length > 0) {
+      setPage(1);
+    }
+  }, [searchQueryString]);
 
   if (loading) return <LoadingSpinner />;
   return (

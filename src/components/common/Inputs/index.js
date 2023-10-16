@@ -6,7 +6,7 @@ export const EmailInput = ({ onChange, placeholder, value }) => {
   return (
     <>
       <label className={classes.label} htmlFor="">
-        Email:
+        Username:
       </label>
       <input
         value={value}

@@ -47,7 +47,7 @@ const Register = () => {
           <EmailInput
             value={registerUser.email}
             onChange={handleEmailInputChange}
-            placeholder="Enter your email"
+            placeholder="Enter user name"
           />
           <PasswordInput
             confirmPassword={confirmPassword}
@@ -74,7 +74,7 @@ const Register = () => {
             value={registerUser.languageForLearn}
             name="Chose language for Learn"
             onChange={handleLanguageForLearnSelectChange}
-            label="Language for learn"
+            label="Language to learn"
             options={LANGUAGES}
           />
           <LongButton
