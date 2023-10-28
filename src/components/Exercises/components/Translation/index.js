@@ -1,7 +1,8 @@
-import classNames from "classnames";
 import React, { useMemo } from "react";
+import classNames from "classnames";
 import { answers } from "../..";
 import { SecondaryButton } from "../../../common/Buttons";
+
 import useStyles from "./styles";
 
 const Translation = ({ checkWord, words, onCheck, correct }) => {

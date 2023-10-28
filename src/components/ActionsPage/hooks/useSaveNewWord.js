@@ -1,6 +1,5 @@
 import { gql, useMutation } from "@apollo/client";
 import { useState } from "react";
-import { GET_WORDS } from "../../Dictionary/components/DictionaryTable";
 
 const ADD_WORD = gql`
   mutation Mutation($word: WordInput!) {

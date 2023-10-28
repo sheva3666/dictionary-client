@@ -1,5 +1,6 @@
 import React from "react";
 import SearchField from "../../../common/SearchField";
+
 import useStyles from "./styles";
 
 const TableToolbar = ({ pages, currentPage, onSearch, searchValue }) => {

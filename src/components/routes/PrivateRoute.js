@@ -1,9 +1,9 @@
 import React from "react";
+import { Navigate } from "react-router-dom";
 import { gql, useQuery } from "@apollo/client";
 
 import LoadingSpinner from "../common/LoadingSpinner";
 import useLocalStorage from "../../hooks/useLocalStorage";
-import { Navigate } from "react-router-dom";
 import { ROUTES } from "../../constants";
 
 export const GET_USER = gql`

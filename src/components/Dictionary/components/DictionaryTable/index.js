@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
-import Table from "../../../common/Table";
-import { compact } from "lodash";
-import useLocalStorage from "../../../../hooks/useLocalStorage";
-import { capitalizeFirstLetter } from "../../../../utils/utils";
-import TableToolbar from "../TableToolbar";
 import { gql, useQuery } from "@apollo/client";
+import { compact } from "lodash";
+import { useNavigate } from "react-router-dom";
+
+import TableToolbar from "../TableToolbar";
+import WordsForm from "../WordsForm";
+
+import Table from "../../../common/Table";
 import LoadingSpinner from "../../../common/LoadingSpinner";
 import { PrimaryButton } from "../../../common/Buttons";
 import { ErrorMessage } from "../../../common/Messages";
+
+import useLocalStorage from "../../../../hooks/useLocalStorage";
+
+import { capitalizeFirstLetter } from "../../../../utils/utils";
 import { ROUTES } from "../../../../constants";
-import { useNavigate } from "react-router-dom";
-import WordsForm from "../WordsForm";
 
 export const GET_WORDS = gql`
   query Words(
@@ -64,7 +68,7 @@ const DictionaryTable = ({ classes }) => {
   const { languageForLearn, language, email } = getItem("user");
   const tableHeader = createTableHeader({ language, languageForLearn });
 
-  const { data, loading, error } = useQuery(GET_WORDS, {
+  const { data, loading } = useQuery(GET_WORDS, {
     variables: {
       user: email,
       language: languageForLearn,

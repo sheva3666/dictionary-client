@@ -1,14 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import Title from "../../common/Title";
 import { EmailInput, PasswordInput } from "../../common/Inputs";
 import { LongButton, PrimaryButton } from "../../common/Buttons";
 import { Select } from "../../common/Selects";
-import { useNavigate } from "react-router-dom";
-import useStyles from "./styles";
-import useRegisterHandle from "../hooks/useRegisterHandle";
 import { ErrorMessage, SuccessMessage } from "../../common/Messages";
+
+import useRegisterHandle from "../hooks/useRegisterHandle";
+
 import { LANGUAGES } from "../constants";
 import { ROUTES } from "../../../constants";
+import useStyles from "./styles";
 
 const Register = () => {
   const classes = useStyles();

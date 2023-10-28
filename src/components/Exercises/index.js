@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Words from "./components/Words";
 import Translation from "./components/Translation";
-import useStyles from "./styles";
+
 import useExerciseData from "./hooks/useExerciseData";
 import useScoreData from "./hooks/useScoreData";
-import LoadingSpinner from "../common/LoadingSpinner";
+
 import Header from "../common/Header";
+import LoadingSpinner from "../common/LoadingSpinner";
 import { PrimaryButton } from "../common/Buttons";
-import { useNavigate } from "react-router-dom";
-import { ROUTES } from "../../constants";
 import { ErrorMessage } from "../common/Messages";
+import { ROUTES } from "../../constants";
+
+import useStyles from "./styles";
 
 export const answers = {
   correct: "CORRECT",

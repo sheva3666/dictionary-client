@@ -29,24 +29,26 @@ const WordsForm = () => {
       {(!inputIsValid(word.word) || !inputIsValid(word.translate)) && (
         <ErrorMessage message="Words should include only letters." />
       )}
-      <Input
-        invalidInput={!inputIsValid(word.word)}
-        onChange={handleLearningInputChange}
-        value={word.word}
-        label={capitalizeFirstLetter(languageForLearn)}
-      />
-      <Input
-        invalidInput={!inputIsValid(word.translate)}
-        onChange={handleTranslateInputChange}
-        value={word.translate}
-        label={capitalizeFirstLetter(language)}
-      />
-      <PrimaryButton
-        disabled={savingDisabled}
-        betterSize
-        onClick={onSaveWord}
-        name="Save"
-      />
+      <div className={classes.formContainer}>
+        <Input
+          invalidInput={!inputIsValid(word.word)}
+          onChange={handleLearningInputChange}
+          value={word.word}
+          label={capitalizeFirstLetter(languageForLearn)}
+        />
+        <Input
+          invalidInput={!inputIsValid(word.translate)}
+          onChange={handleTranslateInputChange}
+          value={word.translate}
+          label={capitalizeFirstLetter(language)}
+        />
+        <PrimaryButton
+          disabled={savingDisabled}
+          betterSize
+          onClick={onSaveWord}
+          name="Save"
+        />
+      </div>
     </div>
   );
 };
