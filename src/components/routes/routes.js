@@ -7,6 +7,7 @@ import Exercises from "../Exercises";
 import Settings from "../Settings";
 
 import { ROUTES } from "../../constants";
+import React from "react";
 
 export const openRoutes = [
   { path: ROUTES.login, component: <LoginLayout /> },
